@@ -24,6 +24,15 @@ rm gat_Linux_arm64.tar.gz
 rm LICENSE
 rm README.md
 
+##############################
+#### Prepare for MariDB 10.11
+##############################
+
+apt-get install apt-transport-https curl
+mkdir -p /etc/apt/keyrings
+curl -o /etc/apt/keyrings/mariadb-keyring.pgp 'https://mariadb.org/mariadb_release_signing_key.pgp'
+
+
 
 
 ##############################
