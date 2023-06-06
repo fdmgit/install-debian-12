@@ -32,7 +32,10 @@ apt-get install apt-transport-https curl
 mkdir -p /etc/apt/keyrings
 curl -o /etc/apt/keyrings/mariadb-keyring.pgp 'https://mariadb.org/mariadb_release_signing_key.pgp'
 
-
+wget https://raw.githubusercontent.com/fdmgit/install-debian-11/main/mariadb_repo
+cp mariadb_repo /etc/apt/sources.list.d/mariadb.sources
+rm mariadb_repo
+apt update
 
 
 ##############################
