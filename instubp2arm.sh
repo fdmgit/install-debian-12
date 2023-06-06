@@ -345,8 +345,8 @@ cd /root
 #echo | add-apt-repository ppa:redislabs/redis
 
 
-curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+#curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+#echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
 apt update
 apt install redis -y
 systemctl enable --now redis-server
@@ -418,14 +418,14 @@ END
 #### new fail2ban and jail
 ###################################
 
-wget https://github.com/fail2ban/fail2ban/releases/download/1.0.2/fail2ban_1.0.2-1.upstream1_all.deb
-echo y | dpkg -i fail2ban_1.0.2-1.upstream1_all.deb
+#wget https://github.com/fail2ban/fail2ban/releases/download/1.0.2/fail2ban_1.0.2-1.upstream1_all.deb
+#echo y | dpkg -i fail2ban_1.0.2-1.upstream1_all.deb
 wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/jail.local
 cd /etc/fail2ban
 mv jail.local jail.local.orig
 cp /root/jail.local jail.local
 rm /root/jail.local
-rm /root/fail2ban_1.0.2-1.upstream1_all.deb
+#rm /root/fail2ban_1.0.2-1.upstream1_all.deb
 
 cd /root
 
