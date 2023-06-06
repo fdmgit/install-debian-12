@@ -15,9 +15,12 @@ systemctl disable clamav-freshclam
 #### install new PHP versions
 ##############################
 
-
-echo | add-apt-repository ppa:ondrej/php
-echo | add-apt-repository ppa:ondrej/apache2
+apt -y install lsb-release apt-transport-https ca-certificates
+echo | curl -sSL https://packages.sury.org/apache2/README.txt | sudo bash -xe
+wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
+#sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list' 
+#sh -c 'echo "deb https://packages.sury.org/apache2/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/apach2.list' 
 apt update
 apt upgrade -y
 
@@ -339,7 +342,11 @@ cd /root
 #### Install Redis Server
 ##############################
 
-echo | add-apt-repository ppa:redislabs/redis
+#echo | add-apt-repository ppa:redislabs/redis
+
+
+curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
 apt update
 apt install redis -y
 systemctl enable --now redis-server
