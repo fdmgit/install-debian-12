@@ -1,1 +1,1 @@
-# installation for debian 11
+# installation for debian 12
