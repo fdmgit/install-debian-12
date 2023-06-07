@@ -1,1 +1,1 @@
-# Installation for debian 12
+# Installation script for debian 12
