@@ -1,8 +1,8 @@
 #!/bin/bash
 
-wget https://raw.githubusercontent.com/fdmgit/install-debian-11/main/bashrc.ini
-wget https://raw.githubusercontent.com/fdmgit/install-debian-11/main/instubp1arm.sh
-wget https://raw.githubusercontent.com/fdmgit/install-debian-11/main/instubp2arm.sh
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/bashrc.ini
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/instubp1arm.sh
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/instubp2arm.sh
 
 cp bashrc.ini /root/.bashrc
 rm /root/bashrc.ini
