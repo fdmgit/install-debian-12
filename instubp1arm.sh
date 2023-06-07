@@ -3,17 +3,20 @@
 apt update
 
 ###################################
-#### Install updated Ubuntu Version
+#### Install Debian 12
 ###################################
 
 apt upgrade -y 
 apt install plocate sntp ntpdate software-properties-common -y 
-hostnamectl set-hostname $2
-
+hostnamectl set-hostname $2  # set hostname
 
 apt update 
-#passwd root
-echo "root:$1" | chpasswd   # set root password -
+
+echo "root:$1" | chpasswd    # set root password -
+
+###################################
+#### Add gat (replacement for cat)
+###################################
 
 cd /usr/local/bin
 wget https://github.com/koki-develop/gat/releases/download/v0.8.2/gat_Linux_arm64.tar.gz
@@ -23,26 +26,6 @@ chmod +x gat
 rm gat_Linux_arm64.tar.gz
 rm LICENSE
 rm README.md
-
-##############################
-#### Prepare for MariDB 10.11
-##############################
-
-apt-get install apt-transport-https curl
-mkdir -p /etc/apt/keyrings
-curl -o /etc/apt/keyrings/mariadb-keyring.pgp 'https://mariadb.org/mariadb_release_signing_key.pgp'
-
-#wget https://raw.githubusercontent.com/fdmgit/install-debian-11/main/mariadb_repo
-#cp mariadb_repo /etc/apt/sources.list.d/mariadb.sources
-#rm mariadb_repo
-
-
-wget https://raw.githubusercontent.com/fdmgit/install-debian-11/main/mariadb_repo_o
-cp mariadb_repo_o /etc/apt/sources.list.d/mariadb.list
-rm mariadb_repo_o
-
-apt update
-
 
 ##############################
 #### Install Virtualmin
