@@ -308,26 +308,6 @@ systemctl restart php8.1-fpm.service
 systemctl restart php8.2-fpm.service
 
 
-################################
-#### install new Python versions  (issuse still investigating!!
-################################
-
-: <<'END'
-echo | add-apt-repository ppa:deadsnakes/ppa -y
-apt update
-apt install python3.11 -y
-apt install python3.11-venv -y
-echo | update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
-echo | update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2
-echo 2 | update-alternatives --config python3
-apt install python3-pip -y
-cd /root
-wget https://raw.githubusercontent.com/fdmgit/install-ubuntu-22.04/main/messages.py
-cp messages.py /usr/lib/python3/dist-packages/acme/messages.py
-rm messages.py
-echo | ln -s /usr/lib/python3/dist-packages/apt_pkg.cpython-310-aarch64-linux-gnu.so /usr/lib/python3/dist-packages/apt_pkg.so
-END
-
 ######################################
 #### install additional Python modules
 ######################################
@@ -342,11 +322,6 @@ cd /root
 #### Install Redis Server
 ##############################
 
-#echo | add-apt-repository ppa:redislabs/redis
-
-
-#curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-#echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
 apt update
 apt install redis -y
 systemctl enable --now redis-server
@@ -410,7 +385,6 @@ leftmenu_user_html="settings_leftmenu_user_html='""$leftmenu_user_html""';";
 sed -i "s|settings_leftmenu_user_html='';|$leftmenu_user_html|g" /etc/webmin/authentic-theme/settings.js
 sed -i "s|settings_leftmenu_user_html='';|$leftmenu_user_html|g" /etc/webmin/authentic-theme/settings-root.js
 
-
 cd /root
 END
 
@@ -418,8 +392,6 @@ END
 #### new fail2ban and jail
 ###################################
 
-#wget https://github.com/fail2ban/fail2ban/releases/download/1.0.2/fail2ban_1.0.2-1.upstream1_all.deb
-#echo y | dpkg -i fail2ban_1.0.2-1.upstream1_all.deb
 wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/jail.local
 cd /etc/fail2ban
 mv jail.local jail.local.orig
