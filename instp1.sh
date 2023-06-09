@@ -31,6 +31,7 @@ rm README.md
 #### Install Virtualmin
 ##############################
 
-wget -O virtualmin-install_arm.sh https://raw.githubusercontent.com/fdmgit/install-debian-12/main/virtualmin-install_arm.sh
-sh virtualmin-install_arm.sh -y
+wget -O virtualmin-install.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
+sh virtualmin-install.sh -y
 reboot
+
