@@ -415,4 +415,8 @@ updatedb
 
 apt autoremove -y # clean installed apps
 
+cd /root
+rm instp1.sh
+rm instp2.sh
+
 reboot
