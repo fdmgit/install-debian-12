@@ -39,6 +39,16 @@ chmod +x joshuto
 rm joshuto-v0.9.4-aarch64-unknown-linux-gnu.tar.gz
 
 
+###################################
+#### Build aliases file
+###################################
+
+cd /root
+mkdir .bash_aliases
+echo "alias jos='joshuto'" >> .bash_aliases
+echo "alias gc='gat'" >> .bash_aliases
+
+
 ##############################
 #### Install Virtualmin
 ##############################
