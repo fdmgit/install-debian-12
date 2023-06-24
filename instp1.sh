@@ -27,6 +27,28 @@ rm gat_Linux_x86_64.tar.gz
 rm LICENSE
 rm README.md
 
+###################################
+#### Add joshuto (cli filemanager)
+###################################
+
+cd /usr/local/bin
+wget https://github.com/kamiyaa/joshuto/releases/download/v0.9.4/joshuto-v0.9.4-x86_64-unknown-linux-gnu.tar.gz
+tar -xvzf joshuto-v0.9.4-x86_64-unknown-linux-gnu.tar.gz
+chown root:root joshuto
+chmod +x joshuto
+rm joshuto-v0.9.4-x86_64-unknown-linux-gnu.tar.gz
+
+
+###################################
+#### Build aliases file
+###################################
+
+cd /root
+mkdir .bash_aliases
+echo "alias jos='joshuto'" >> .bash_aliases
+echo "alias gc='gat'" >> .bash_aliases
+
+
 ##############################
 #### Install Virtualmin
 ##############################
