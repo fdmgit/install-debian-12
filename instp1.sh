@@ -34,6 +34,7 @@ rm README.md
 cd /usr/local/bin
 wget https://github.com/kamiyaa/joshuto/releases/download/v0.9.4/joshuto-v0.9.4-x86_64-unknown-linux-gnu.tar.gz
 tar -xvzf joshuto-v0.9.4-x86_64-unknown-linux-gnu.tar.gz
+tar -vxzf joshuto-v0.9.4-x86_64-unknown-linux-gnu.tar.gz -C /usr/local/bin  --strip-components=1
 chown root:root joshuto
 chmod +x joshuto
 rm joshuto-v0.9.4-x86_64-unknown-linux-gnu.tar.gz
