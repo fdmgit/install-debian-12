@@ -45,7 +45,7 @@ rm joshuto-v0.9.4-x86_64-unknown-linux-gnu.tar.gz
 ###################################
 
 cd /root
-mkdir .bash_aliases
+touch .bash_aliases
 echo "alias jos='joshuto'" >> .bash_aliases
 echo "alias gc='gat'" >> .bash_aliases
 
