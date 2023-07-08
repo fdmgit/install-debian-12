@@ -394,12 +394,12 @@ END
 #### new fail2ban and jail
 ###################################
 
-wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/jail.local
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/jaildeb12.local
 cd /etc/fail2ban
 mv jail.local jail.local.orig
-cp /root/jail.local jail.local
-rm /root/jail.local
-#rm /root/fail2ban_1.0.2-1.upstream1_all.deb
+cp /root/jaildeb12.local jail.local
+rm /root/jaildeb12.local
+
 
 cd /root
 
