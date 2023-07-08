@@ -421,5 +421,6 @@ apt autoremove -y # clean installed apps
 cd /root
 rm instp1.sh
 rm instp2.sh
+rm load_inst_files.sh
 
 reboot
