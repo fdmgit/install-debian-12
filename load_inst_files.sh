@@ -9,3 +9,5 @@ rm /root/bashrc.ini
 
 chmod +x /root/instp1.sh
 chmod +x /root/instp2.sh
+
+reboot
