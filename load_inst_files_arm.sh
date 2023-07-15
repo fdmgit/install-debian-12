@@ -9,3 +9,5 @@ rm /root/bashrc.ini
 
 chmod +x /root/instp1arm.sh
 chmod +x /root/instp2arm.sh
+
+reboot
