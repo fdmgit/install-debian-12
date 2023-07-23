@@ -423,6 +423,6 @@ cd /root
 rm instp1arm.sh
 rm instp2arm.sh
 rm load_inst_files_arm.sh
-rm -R .spamassassin
+rm -rf /root/.spamassassin
 
 reboot
