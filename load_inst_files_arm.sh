@@ -10,4 +10,17 @@ rm /root/bashrc.ini
 chmod +x /root/instp1arm.sh
 chmod +x /root/instp2arm.sh
 
+###################################
+#### Setup root key file
+###################################
+
+if [ -d /root/.ssh ]; then 
+    echo ".ssh exists"
+else
+    mkdir /root/.ssh
+fi
+
+cd /root/.ssh
+wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/authorized_keys
+
 reboot
