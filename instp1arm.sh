@@ -49,21 +49,6 @@ touch .bash_aliases
 echo "alias jos='joshuto'" >> .bash_aliases
 echo "alias gc='gat'" >> .bash_aliases
 
-###################################
-#### Setup root key file
-###################################
-
-if [ -d /root/.ssh ]; then 
-    echo ".ssh exists"
-else
-    mkdir /root/.ssh
-fi
-
-cd /root/.ssh
-wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/authorized_keys
-
-cd /root
-
 
 ##############################
 #### Install Virtualmin
