@@ -20,7 +20,11 @@ else
     mkdir /root/.ssh
 fi
 
-cd /root/.ssh
-wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/authorized_keys
+if [ -f /root/.ssh/authorized_keys ]; then
+    echo "file authorized_keys exists"
+else
+    cd /root/.ssh
+    wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/authorized_keys
+fi
 
 reboot
