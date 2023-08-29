@@ -38,5 +38,12 @@ systemctl stop apparmor
 systemctl disable apparmor
 apt remove --assume-yes --purge apparmor
 
+touch /etc/default/raspi-firmware-custom
+echo "# overclocking" >> /etc/default/raspi-firmware-custom
+echo "over_voltage=3" >> /etc/default/raspi-firmware-custom
+echo "arm_freq=1800" >> /etc/default/raspi-firmware-custom
+echo "gpu_freq=600" >> /etc/default/raspi-firmware-custom
+
 dpkg-reconfigure keyboard-configuration
+
 
