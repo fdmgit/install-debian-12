@@ -6,6 +6,7 @@ wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/instp2arm.s
 
 cp bashrc.ini /root/.bashrc
 rm /root/bashrc.ini
+source .bashrc
 
 chmod +x /root/instp1arm.sh
 chmod +x /root/instp2arm.sh
@@ -31,7 +32,7 @@ apt update && apt upgrade -y
 
 apt install curl sudo software-properties-common -y
 
-apt install keyboard-configuration console-setup locale -y
+apt install keyboard-configuration console-setup locales -y
 
 dpkg-reconfigure keyboard-configuration
 
