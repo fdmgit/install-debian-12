@@ -6,7 +6,7 @@ wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/instp2arm.s
 
 cp bashrc.ini /root/.bashrc
 rm /root/bashrc.ini
-source .bashrc
+source /root/.bashrc
 
 chmod +x /root/instp1arm.sh
 chmod +x /root/instp2arm.sh
