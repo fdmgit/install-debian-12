@@ -34,5 +34,9 @@ apt install curl sudo software-properties-common -y
 
 apt install keyboard-configuration console-setup locales -y
 
+systemctl stop apparmor
+systemctl disable apparmor
+apt remove --assume-yes --purge apparmor
+
 dpkg-reconfigure keyboard-configuration
 
