@@ -20,5 +20,15 @@ wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/load_inst_f
 bash load_inst_files.sh
 ```
 
+To install for Raspberry use:
+
+```
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/raspbase.sh
+```
+
+```
+bash raspbase.sh
+```
+
 
 
