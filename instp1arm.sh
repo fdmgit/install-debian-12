@@ -56,7 +56,8 @@ echo "alias gc='gat'" >> .bash_aliases
 
 apt install gpg-agent -y
 
-wget -O virtualmin-install_arm.sh https://raw.githubusercontent.com/fdmgit/install-debian-12/main/virtualmin-install_arm.sh
+#wget -O virtualmin-install_arm.sh https://raw.githubusercontent.com/fdmgit/install-debian-12/main/virtualmin-install_arm.sh
+wget -O virtualmin-install_arm.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
 sh virtualmin-install_arm.sh -y
 rm virtualmin-install_arm.sh
 reboot
