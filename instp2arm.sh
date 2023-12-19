@@ -51,6 +51,11 @@ apt install php8.2-gd php8.2-gmp php8.2-igbinary php8.2-imagick php8.2-imap php8
 apt install php8.2-mysql php8.2-odbc php8.2-opcache php8.2-pspell php8.2-readline -y
 apt install php8.2-redis php8.2-soap php8.2-sqlite3 php8.2-tidy php8.2-xml php8.2-xmlrpc php8.2-xsl php8.2-zip -y
 
+apt install php8.3-bcmath php8.3-bz2 php8.3-cgi php8.3-curl php8.3-dba php8.3-fpm -y
+apt install php8.3-gd php8.3-gmp php8.3-igbinary php8.3-imagick php8.3-imap php8.3-intl php8.3-ldap php8.3-mbstring -y
+apt install php8.3-mysql php8.3-odbc php8.3-opcache php8.3-pspell php8.3-readline -y
+apt install php8.3-redis php8.3-soap php8.3-sqlite3 php8.3-tidy php8.3-xml php8.3-xmlrpc php8.3-xsl php8.3-zip -y
+
 ##############################
 #### Change php.ini parameters
 ##############################
@@ -286,6 +291,66 @@ opcache.enable_cli=1
 opcache.jit_buffer_size=256M
 
 EOF
+
+cat >> /etc/php/8.3/fpm/php.ini <<'EOF'
+
+[PHP]
+output_buffering = Off
+max_execution_time = 300
+max_input_time = 300
+memory_limit = 512M
+post_max_size = 1024M
+upload_max_filesize = 1024M
+date.timezone = Europe/Zurich
+max_input_vars = 10000
+[Session]
+session.gc_maxlifetime = 3600     
+[opcache]
+opcache.enable=1
+opcache.enable_cli=1
+opcache.jit_buffer_size=256M
+
+EOF
+
+
+cat >> /etc/php/8.3/cgi/php.ini <<'EOF'
+
+[PHP]
+output_buffering = Off
+max_execution_time = 300
+max_input_time = 300
+memory_limit = 512M
+post_max_size = 1024M
+upload_max_filesize = 1024M
+date.timezone = Europe/Zurich
+max_input_vars = 10000
+[Session]
+session.gc_maxlifetime = 3600     
+[opcache]
+opcache.enable=1
+opcache.enable_cli=1
+opcache.jit_buffer_size=256M
+
+EOF
+
+
+cat >> /etc/php/8.3/cli/php.ini <<'EOF'
+
+[PHP]
+output_buffering = Off
+max_execution_time = 300
+max_input_time = 300
+memory_limit = 512M
+post_max_size = 1024M
+upload_max_filesize = 1024M
+date.timezone = Europe/Zurich
+max_input_vars = 10000
+[Session]
+session.gc_maxlifetime = 3600     
+[opcache]
+opcache.enable=1
+opcache.enable_cli=1
+opcache.jit_buffer_size=256M
 
 
 #####################################
