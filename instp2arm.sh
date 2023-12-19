@@ -373,6 +373,7 @@ systemctl restart php7.4-fpm.service
 systemctl restart php8.0-fpm.service
 systemctl restart php8.1-fpm.service
 systemctl restart php8.2-fpm.service
+systemctl restart php8.3-fpm.service
 
 
 ######################################
@@ -406,12 +407,12 @@ EOF
 #### add config files to Virtualmin
 ###################################
 
-cd /etc/webmin/virtual-server/plans
-wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/160880314564582
-cd /etc/webmin/virtual-server/templates
-wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/server-level.tar.gz
-tar -xvzf server-level.tar.gz
-rm server-level.tar.gz
+#cd /etc/webmin/virtual-server/plans
+#wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/160880314564582
+#cd /etc/webmin/virtual-server/templates
+#wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/server-level.tar.gz
+#tar -xvzf server-level.tar.gz
+#rm server-level.tar.gz
 
 cd /root
 
