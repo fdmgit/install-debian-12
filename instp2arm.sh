@@ -17,11 +17,11 @@ systemctl disable postgrey
 #### install new PHP versions
 ##############################
 
-apt -y install lsb-release apt-transport-https ca-certificates
+#apt -y install lsb-release apt-transport-https ca-certificates
 echo | curl -sSL https://packages.sury.org/apache2/README.txt | sudo bash -xe
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-echo "deb https://packages.sury.org/php/ buster main" | tee /etc/apt/sources.list.d/php.list
-echo "deb https://packages.sury.org/php/ bullseye main" | tee -a /etc/apt/sources.list.d/php.list
+#echo "deb https://packages.sury.org/php/ buster main" | tee /etc/apt/sources.list.d/php.list
+#echo "deb https://packages.sury.org/php/ bullseye main" | tee -a /etc/apt/sources.list.d/php.list
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee -a /etc/apt/sources.list.d/php.list
 apt update
 apt upgrade -y
