@@ -23,6 +23,10 @@ wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 #echo "deb https://packages.sury.org/php/ buster main" | tee /etc/apt/sources.list.d/php.list
 #echo "deb https://packages.sury.org/php/ bullseye main" | tee -a /etc/apt/sources.list.d/php.list
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee -a /etc/apt/sources.list.d/php.list
+echo "deb http://deb.debian.org/debian/ bookworm-backports main" | tee -a /etc/apt/sources.list
+echo "deb-src http://deb.debian.org/debian/ bookworm-backports main" | tee -a /etc/apt/sources.list
+echo "deb http://deb.debian.org/debian/ experimental main" | tee -a /etc/apt/sources.list
+echo "deb-src http://deb.debian.org/debian/ experimental main" | tee -a /etc/apt/sources.list
 apt update
 apt upgrade -y
 
