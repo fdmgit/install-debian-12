@@ -10,10 +10,6 @@ apt upgrade -y
 apt install plocate sntp ntpdate software-properties-common curl apt-transport-https -y
 timedatectl set-timezone Europe/Zurich
 hostnamectl set-hostname $2  # set hostname
-echo "deb http://deb.debian.org/debian/ bookworm-backports main" | tee -a /etc/apt/sources.list
-echo "deb-src http://deb.debian.org/debian/ bookworm-backports main" | tee -a /etc/apt/sources.list
-echo "deb http://deb.debian.org/debian/ experimental main" | tee -a /etc/apt/sources.list
-echo "deb-src http://deb.debian.org/debian/ experimental main" | tee -a /etc/apt/sources.list
 
 apt update 
 
