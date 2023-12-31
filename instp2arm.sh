@@ -352,6 +352,23 @@ opcache.enable=1
 opcache.enable_cli=1
 opcache.jit_buffer_size=256M
 
+cat >> /etc/php/8.3/fpm/php.ini <<'EOF'
+
+[PHP]
+output_buffering = Off
+max_execution_time = 300
+max_input_time = 300
+memory_limit = 512M
+post_max_size = 1024M
+upload_max_filesize = 1024M
+date.timezone = Europe/Zurich
+max_input_vars = 10000
+[Session]
+session.gc_maxlifetime = 3600     
+[opcache]
+opcache.enable=1
+opcache.enable_cli=1
+opcache.jit_buffer_size=256M
 
 #####################################
 #### Enable additional Apache modules
