@@ -473,7 +473,8 @@ cd /root
 #################################
 
 cd /usr/share/keyrings
-wget 
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/tataranovich-keyring.gpg
+
 
 
 
