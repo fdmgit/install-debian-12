@@ -474,9 +474,12 @@ cd /root
 
 cd /usr/share/keyrings
 wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/tataranovich-keyring.gpg
+echo "# Repository for Midnight Commander" > /etc/apt/sources.list.d/mc.list
+echo "deb [signed-by=/usr/share/keyrings/tataranovich-keyring.gpg] http://www.tataranovich.com/debian bookworm main" >> /etc/apt/sources.list.d/mc.list
+echo "debsrc [signed-by=/usr/share/keyrings/tataranovich-keyring.gpg] http://www.tataranovich.com/debian bookworm main" >> /etc/apt/sources.list.d/mc.list
 
-
-
+apt update
+apt install mc -y
 
 
 ##############################
