@@ -468,6 +468,16 @@ touch /var/log/auth.log
 
 cd /root
 
+#################################
+#### Install Midnight Commander
+#################################
+
+cd /usr/share/keyrings
+wget 
+
+
+
+
 ##############################
 #### Update programs
 ##############################
