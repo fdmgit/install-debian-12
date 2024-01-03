@@ -20,7 +20,7 @@ echo "root:$1" | chpasswd    # set root password -
 ###################################
 
 cd /usr/local/bin
-wget https://github.com/koki-develop/gat/releases/download/v0.8.3/gat_Linux_arm64.tar.gz
+wget https://github.com/koki-develop/gat/releases/download/v0.15.0/gat_Linux_arm64.tar.gz
 tar -xvzf gat_Linux_arm64.tar.gz
 chown root:root gat
 chmod +x gat
@@ -33,11 +33,11 @@ rm README.md
 ###################################
 
 cd /usr/local/bin
-wget https://github.com/kamiyaa/joshuto/releases/download/v0.9.4/joshuto-v0.9.4-aarch64-unknown-linux-gnu.tar.gz
-tar -vxzf joshuto-v0.9.4-aarch64-unknown-linux-gnu.tar.gz -C /usr/local/bin  --strip-components=1
+wget https://github.com/kamiyaa/joshuto/releases/download/v0.9.6/joshuto-v0.9.6-aarch64-unknown-linux-gnu.tar.gz
+tar -vxzf joshuto-v0.9.6-aarch64-unknown-linux-gnu.tar.gz -C /usr/local/bin  --strip-components=1
 chown root:root joshuto
 chmod +x joshuto
-rm joshuto-v0.9.4-aarch64-unknown-linux-gnu.tar.gz
+rm joshuto-v0.9.6-aarch64-unknown-linux-gnu.tar.gz
 
 
 ###################################
