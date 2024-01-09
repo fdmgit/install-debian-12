@@ -7,6 +7,8 @@ wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/instp2.sh
 cp bashrc.ini /root/.bashrc
 rm /root/bashrc.ini
 
+echo "deb http://deb.debian.org/debian/ bookworm-backports main" | tee -a /etc/apt/sources.list
+
 chmod +x /root/instp1.sh
 chmod +x /root/instp2.sh
 
