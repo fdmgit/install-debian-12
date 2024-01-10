@@ -9,8 +9,6 @@ rm /root/bashrc.ini
 
 echo "deb http://deb.debian.org/debian/ bookworm-backports main" | tee -a /etc/apt/sources.list
 
-apt update
-
 chmod +x /root/instp1.sh
 chmod +x /root/instp2.sh
 
