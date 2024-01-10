@@ -502,4 +502,10 @@ rm instp2.sh
 rm load_inst_files.sh
 rm -R .spamassassin
 
+##############################
+#### Install new Linux Kernel
+##############################
+
+apt install linux-image-6.5.0-0.deb12.4-amd64 -y
+
 reboot
