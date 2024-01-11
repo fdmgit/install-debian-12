@@ -8,9 +8,6 @@ cp bashrc.ini /root/.bashrc
 rm /root/bashrc.ini
 
 echo "deb http://deb.debian.org/debian/ bookworm-backports main" | tee -a /etc/apt/sources.list
-echo "deb-src http://deb.debian.org/debian/ bookworm-backports main" | tee -a /etc/apt/sources.list
-echo "deb http://deb.debian.org/debian/ experimental main" | tee -a /etc/apt/sources.list
-echo "deb-src http://deb.debian.org/debian/ experimental main" | tee -a /etc/apt/sources.list
 
 chmod +x /root/instp1arm.sh
 chmod +x /root/instp2arm.sh
