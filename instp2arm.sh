@@ -510,4 +510,10 @@ rm instp2arm.sh
 rm load_inst_files_arm.sh
 rm -rf /root/.spamassassin
 
+##############################
+#### Install new Linux Kernel
+##############################
+
+apt install linux-image-6.5.0-0.deb12.4-amd64 -y
+
 reboot
