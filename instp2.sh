@@ -331,6 +331,8 @@ opcache.enable=1
 opcache.enable_cli=1
 opcache.jit_buffer_size=256M
 
+EOF
+
 cat >> /etc/php/8.3/fpm/php.ini <<'EOF'
 
 [PHP]
@@ -349,6 +351,7 @@ opcache.enable=1
 opcache.enable_cli=1
 opcache.jit_buffer_size=256M
 
+EOF
 
 
 #####################################
