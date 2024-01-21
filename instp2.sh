@@ -387,12 +387,12 @@ cd /root
 #### Install Redis Server
 ##############################
 
-curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+#curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+#echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
 apt update
 apt install redis -y
-systemctl enable --now redis-server
-systemctl restart redis-server
+#systemctl enable --now redis-server
+#systemctl restart redis-server
 
 cat >> /etc/sysctl.conf <<'EOF'
 
