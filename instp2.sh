@@ -372,6 +372,7 @@ systemctl restart php7.4-fpm.service
 systemctl restart php8.0-fpm.service
 systemctl restart php8.1-fpm.service
 systemctl restart php8.2-fpm.service
+systemctl restart php8.3-fpm.service
 
 
 ######################################
@@ -380,6 +381,7 @@ systemctl restart php8.2-fpm.service
 
 apt install python3-venv -y
 apt install python3-pip -y
+apt install virtualenv
 
 cd /root
 
