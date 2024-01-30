@@ -352,6 +352,8 @@ opcache.enable=1
 opcache.enable_cli=1
 opcache.jit_buffer_size=256M
 
+EOF
+
 cat >> /etc/php/8.3/fpm/php.ini <<'EOF'
 
 [PHP]
@@ -369,6 +371,8 @@ session.gc_maxlifetime = 3600
 opcache.enable=1
 opcache.enable_cli=1
 opcache.jit_buffer_size=256M
+
+EOF
 
 #####################################
 #### Enable additional Apache modules
@@ -399,6 +403,7 @@ systemctl restart php8.3-fpm.service
 
 apt install python3-venv -y
 apt install python3-pip -y
+apt install virtualenv -y
 
 cd /root
 
