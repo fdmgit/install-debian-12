@@ -381,7 +381,7 @@ systemctl restart php8.3-fpm.service
 
 apt install python3-venv -y
 apt install python3-pip -y
-apt install virtualenv
+apt install virtualenv -y
 
 cd /root
 
