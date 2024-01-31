@@ -11,6 +11,7 @@ systemctl disable proftpd
 systemctl disable clamav-freshclam
 systemctl disable clamav-daemon
 systemctl disable postgrey
+systemctl disable postfix
 
 
 ##############################
