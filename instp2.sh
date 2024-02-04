@@ -431,7 +431,7 @@ rm logostyle.zip
 
 cd /root
 
-#: <<'END'
+: <<'END'
 
 wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/settings.js
 wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/settings-root.js
@@ -456,7 +456,7 @@ sed -i "s|settings_leftmenu_user_html='';|$leftmenu_user_html|g" /etc/webmin/aut
 sed -i "s|settings_leftmenu_user_html='';|$leftmenu_user_html|g" /etc/webmin/authentic-theme/settings-root.js
 
 cd /root
-#END
+END
 
 ###################################
 #### new fail2ban and jail
