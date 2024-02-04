@@ -431,7 +431,8 @@ rm logostyle.zip
 
 cd /root
 
-: <<'END'
+#: <<'END'
+
 wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/settings.js
 wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/settings-root.js
 cp settings.js /etc/webmin/authentic-theme/
@@ -448,14 +449,14 @@ ip_address_array=($all_ip_addresses);
 local_host="$(hostname -s)";
 local_host=${local_host^^};
 
-leftmenu_user_html="<br /><kb><b><span style='font-size:20px;color:gold;'>""$local_host""</span></b></kb><br /><kb><span style='font-size:16px;color:gold;'>""${ip_address_array[0]}""</span></kb>";
+leftmenu_user_html="<br /><kb><b><span style='font-size:20px;color:gold;'>""$local_host""</span></b></kb><br /><kb><span style='font-size:16px;color:gold;'>IP4:&nbsp;&nbsp;""${ip_address_array[0]}""</span></kb><br /><kb><span style='font-size:16px;color:gold;'>IP6:&nbsp;&nbsp;""${ip_address_array[1]}""</span></kb>";
 leftmenu_user_html="settings_leftmenu_user_html='""$leftmenu_user_html""';";
 
 sed -i "s|settings_leftmenu_user_html='';|$leftmenu_user_html|g" /etc/webmin/authentic-theme/settings.js
 sed -i "s|settings_leftmenu_user_html='';|$leftmenu_user_html|g" /etc/webmin/authentic-theme/settings-root.js
 
 cd /root
-END
+#END
 
 ###################################
 #### new fail2ban and jail
