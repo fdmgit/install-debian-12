@@ -465,7 +465,7 @@ END
 mkdir -p /etc/apt/keyrings
 curl -o /etc/apt/keyrings/mariadb-keyring.pgp 'https://mariadb.org/mariadb_release_signing_key.pgp'
 touch /etc/apt/sources.list.d/mariadb.list
-cat >> /etc/apt/sources.list.d/mariadb.list<<'EOF'
+cat >> /etc/apt/sources.list.d/mariadb.list <<'EOF'
 
 # MariaDB 11.2 repository list - created 2024-02-17 12:08 UTC
 # https://mariadb.org/download/
