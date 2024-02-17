@@ -476,6 +476,9 @@ deb [signed-by=/etc/apt/keyrings/mariadb-keyring.pgp] https://mirror.mva-n.net/m
 
 EOF
 
+apt update
+apt upgrade -y
+
 ###################################
 #### new fail2ban and jail
 ###################################
