@@ -459,6 +459,24 @@ cd /root
 END
 
 ###################################
+#### update MariaDB
+###################################
+
+mkdir -p /etc/apt/keyrings
+curl -o /etc/apt/keyrings/mariadb-keyring.pgp 'https://mariadb.org/mariadb_release_signing_key.pgp'
+touch /etc/apt/sources.list.d/mariadb.list
+cat >> /etc/apt/sources.list.d/mariadb.list<<'EOF'
+
+# MariaDB 11.2 repository list - created 2024-02-17 12:08 UTC
+# https://mariadb.org/download/
+# deb.mariadb.org is a dynamic mirror if your preferred mirror goes offline. See https://mariadb.org/mirrorbits/ for details.
+# deb [signed-by=/etc/apt/keyrings/mariadb-keyring.pgp] https://deb.mariadb.org/11.2/debian bookworm main
+deb [signed-by=/etc/apt/keyrings/mariadb-keyring.pgp] https://mirror.mva-n.net/mariadb/repo/11.2/debian bookworm main
+# deb-src [signed-by=/etc/apt/keyrings/mariadb-keyring.pgp] https://mirror.mva-n.net/mariadb/repo/11.2/debian bookworm main
+
+EOF
+
+###################################
 #### new fail2ban and jail
 ###################################
 
