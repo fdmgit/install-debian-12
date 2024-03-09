@@ -20,7 +20,7 @@ echo "root:$1" | chpasswd    # set root password -
 ###################################
 
 cd /usr/local/bin
-wget https://github.com/koki-develop/gat/releases/download/v0.15.0/gat_Linux_x86_64.tar.gz
+wget https://github.com/koki-develop/gat/releases/download/v0.16.0/gat_Linux_x86_64.tar.gz
 tar -xvzf gat_Linux_x86_64.tar.gz
 chown root:root gat
 chmod +x gat
