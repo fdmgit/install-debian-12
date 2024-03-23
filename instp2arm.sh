@@ -428,12 +428,12 @@ EOF
 #### add config files to Virtualmin
 ###################################
 
-#cd /etc/webmin/virtual-server/plans
-#wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/160880314564582
-#cd /etc/webmin/virtual-server/templates
-#wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/server-level.tar.gz
-#tar -xvzf server-level.tar.gz
-#rm server-level.tar.gz
+cd /etc/webmin/virtual-server/plans
+wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/160880314564582
+cd /etc/webmin/virtual-server/templates
+wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/server-level.tar.gz
+tar -xvzf server-level.tar.gz
+rm server-level.tar.gz
 
 cd /root
 
