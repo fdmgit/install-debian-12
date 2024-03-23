@@ -518,6 +518,6 @@ rm -rf /root/.spamassassin
 #### Install new Linux Kernel
 ##############################
 
-#apt install linux-image-6.5.0-0.deb12.4-arm64 -y
+apt install linux-image-6.5.0-0.deb12.4-arm64 -y
 
 reboot
