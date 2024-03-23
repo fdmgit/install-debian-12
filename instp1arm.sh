@@ -7,7 +7,7 @@ apt update
 ###################################
 
 apt upgrade -y 
-apt install plocate sntp ntpdate software-properties-common curl apt-transport-https -y
+apt install plocate sntp ntpdate software-properties-common curl apt-transport-https nvme-cli smartmontools -y
 timedatectl set-timezone Europe/Zurich
 hostnamectl set-hostname $2  # set hostname
 
