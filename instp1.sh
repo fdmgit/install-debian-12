@@ -39,6 +39,7 @@ tar -vxzf joshuto-v0.9.6-x86_64-unknown-linux-gnu.tar.gz -C /usr/local/bin  --st
 chown root:root joshuto
 chmod +x joshuto
 rm joshuto-v0.9.6-x86_64-unknown-linux-gnu.tar.gz
+rm -R joshuto-v0.9.6-x86_64-unknown-linux-gnu
 
 
 ###################################
