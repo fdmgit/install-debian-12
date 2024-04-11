@@ -505,14 +505,15 @@ rm instp2.sh
 rm load_inst_files.sh
 rm -R .spamassassin
 
-##############################
-#### Install smartmontools
-##############################
+######################################
+#### Install smartmontools & nvme-cli
+######################################
 
 cd /root
 wget  https://raw.githubusercontent.com/fdmgit/install-debian-12/main/smartmontools_7.4-2~bpo12+1_amd64.deb
 dpkg -i smartmontools_7.4-2~bpo12+1_amd64.deb
 rm smartmontools_7.4-2~bpo12+1_amd64.deb
+apt install nvme-cli -y
 
 ##############################
 #### Install new Linux Kernel
