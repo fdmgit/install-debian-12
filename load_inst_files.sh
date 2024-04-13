@@ -31,6 +31,7 @@ fi
 
 ###################################
 #### SSH Hardening
+#### https://sshaudit.com
 ###################################
 
 #### Re-generate the RSA and ED25519 keys
