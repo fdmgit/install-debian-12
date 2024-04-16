@@ -490,8 +490,14 @@ cp /root/jail-deb12.local jail.local
 rm /root/jail-deb12.local
 touch /var/log/auth.log
 
-
 cd /root
+
+###################################
+#### install password generator
+###################################
+
+apt install pwgen -y
+
 
 ##############################
 #### Update programs
