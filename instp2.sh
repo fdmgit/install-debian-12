@@ -471,6 +471,13 @@ touch /var/log/auth.log
 
 cd /root
 
+###################################
+#### install password generator
+###################################
+
+apt install pwgen -y
+
+
 #################################
 #### Install Midnight Commander
 #################################
