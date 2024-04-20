@@ -520,6 +520,13 @@ rm instp2arm.sh
 rm load_inst_files_arm.sh
 rm -rf /root/.spamassassin
 
+######################################
+#### Copy .bash_aliases to skel
+######################################
+
+cd /root
+cp .bash_aliases /etc/skel/.bash_aliases
+
 ##############################
 #### Install new Linux Kernel
 ##############################
