@@ -522,6 +522,13 @@ dpkg -i smartmontools_7.4-2~bpo12+1_amd64.deb
 rm smartmontools_7.4-2~bpo12+1_amd64.deb
 apt install nvme-cli -y
 
+######################################
+#### Copy .bash_aliases to skel
+######################################
+
+cd /root
+cp .bash_aliases /etc/skel/.bash_aliases
+
 ##############################
 #### Install new Linux Kernel
 ##############################
