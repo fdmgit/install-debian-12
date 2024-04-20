@@ -5,6 +5,7 @@ wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/instp1.sh
 wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/instp2.sh
 
 cp bashrc.ini /root/.bashrc
+cp bashrc.ini /etc/skel/.bashrc
 rm /root/bashrc.ini
 
 echo "deb http://deb.debian.org/debian/ bookworm-backports main" | tee -a /etc/apt/sources.list
