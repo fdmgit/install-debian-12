@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Define colors
+RED='\033[0;31m'
+LRED='\033[0;91m'
+BLUE='\033[0;34m'
+YELLOW='\033[0;33m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+# Retrieve the IP address
+ip_address=$(hostname -I | awk '{print $1}')
+
 wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/bashrc.ini
 wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/instp1arm.sh
 wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/instp2arm.sh
