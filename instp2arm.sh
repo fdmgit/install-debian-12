@@ -515,9 +515,9 @@ updatedb
 apt autoremove -y # clean installed apps
 
 cd /root
-rm instp1arm.sh
+rm instp1narm.sh
 rm instp2arm.sh
-rm load_inst_files_arm.sh
+rm li_files_arm.sh
 rm -rf /root/.spamassassin
 
 ######################################
