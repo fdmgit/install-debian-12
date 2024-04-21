@@ -58,15 +58,15 @@ until [[ "$fqdn" =~ ^.*\..*\..*$ ]]; do
    fi
 done
 
-
-start_inst="Y"
 echo -e "${NC}"
 read -r -p "     Ready to start installation [Y/n] ? " start_inst
+if [[ "$start_inst" = "" ]]; then
+   start_inst="Y"
+fi
 if [[ "$start_inst" != [yY] ]]; then
    clear
    exit
 fi   
-
 
 apt update
 
