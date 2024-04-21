@@ -77,7 +77,7 @@ apt update
 apt upgrade -y 
 apt install plocate sntp ntpdate software-properties-common curl nvme-cli smartmontools -y 
 timedatectl set-timezone Europe/Zurich
-hostnamectl set-hostname $fqnd  # set hostname
+hostnamectl set-hostname $fqdn  # set hostname
 
 apt update 
 
