@@ -13,7 +13,7 @@ ip_address=$(hostname -I | awk '{print $1}')
 
 
 wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/bashrc.ini
-wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/instp1.sh
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/instp1n.sh
 wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/instp2.sh
 
 cp bashrc.ini /root/.bashrc
