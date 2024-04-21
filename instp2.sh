@@ -507,7 +507,7 @@ updatedb
 apt autoremove -y # clean installed apps
 
 cd /root
-rm instp1.sh
+rm instp1n.sh
 rm instp2.sh
 rm load_inst_files.sh
 rm -R .spamassassin
