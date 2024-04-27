@@ -20,6 +20,8 @@ To install for Raspberry use:
 wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/raspbase.sh && bash raspbase.sh
 ```
 
+updated: 240427
+
 
 
 
