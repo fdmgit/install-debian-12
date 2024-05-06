@@ -483,6 +483,12 @@ END
 #### new fail2ban and jail
 ###################################
 
+cd /root
+
+wget -O fail2ban_newest.deb  https://github.com/fail2ban/fail2ban/releases/download/1.1.0/fail2ban_1.1.0-1.upstream1_all.deb
+dpkg -i --force-confnew fail2ban_newest.deb
+rm fail2ban_newest.deb
+
 wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/jail-deb12.local
 cd /etc/fail2ban
 mv jail.local jail.local.orig
