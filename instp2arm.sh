@@ -550,5 +550,6 @@ cp .bash_aliases /etc/skel/.bash_aliases
 ##############################
 
 apt install linux-image-6.6.13+bpo-arm64 -y
+apt install linux-headers-6.6.13+bpo-arm64 -y
 
 reboot
