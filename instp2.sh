@@ -548,10 +548,10 @@ apt install linux-headers-6.6.13+bpo-amd64 -y
 
 curl -o /etc/apt/keyrings/mariadb-keyring.pgp 'https://mariadb.org/mariadb_release_signing_key.pgp'
 
-cd /etc/apt/source.list.d
+cd /etc/apt/sources.list.d
 touch mariadb.list
 
-cat >> /etc/apt/source.list.d/mariadb.list <<'EOF'
+cat >> /etc/apt/sources.list.d/mariadb.list <<'EOF'
 
 # deb.mariadb.org is a dynamic mirror if your preferred mirror goes offline. See https://mariadb.org/mirrorbits/ for details.
 # deb [signed-by=/etc/apt/keyrings/mariadb-keyring.pgp] https://deb.mariadb.org/10.11/debian bookworm main
