@@ -542,4 +542,26 @@ cp .bash_aliases /etc/skel/.bash_aliases
 apt install linux-image-6.6.13+bpo-amd64 -y
 apt install linux-headers-6.6.13+bpo-amd64 -y
 
+##################################
+#### Install MariaDB Repository
+##################################
+
+curl -o /etc/apt/keyrings/mariadb-keyring.pgp 'https://mariadb.org/mariadb_release_signing_key.pgp'
+
+cd /etc/apt/source.list.d
+touch mariadb.list
+
+cat >> /etc/apt/source.list.d/mariadb.list <<'EOF'
+
+# deb.mariadb.org is a dynamic mirror if your preferred mirror goes offline. See https://mariadb.org/mirrorbits/ for details.
+# deb [signed-by=/etc/apt/keyrings/mariadb-keyring.pgp] https://deb.mariadb.org/10.11/debian bookworm main
+
+deb [signed-by=/etc/apt/keyrings/mariadb-keyring.pgp] https://mirror.mva-n.net/mariadb/repo/10.11/debian bookworm main
+# deb-src [signed-by=/etc/apt/keyrings/mariadb-keyring.pgp] https://mirror.mva-n.net/mariadb/repo/10.11/debian bookworm main
+
+EOF
+
+apt update
+apt upgrade -y
+
 reboot
