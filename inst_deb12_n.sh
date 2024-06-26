@@ -50,7 +50,7 @@ function print_conf () {
    echo ""
 }
 
-funtion inst_logo_styles () {
+function inst_logo_styles () {
 
 ###################################
 #### add logo and styles
@@ -216,7 +216,7 @@ EOF
 }
 
 
-funtion inst_kernel () {
+function inst_kernel () {
 
 ##############################
 #### Install new Linux Kernel
@@ -244,7 +244,7 @@ function inst_sury_repo () {
 }
 
 
-inst_php74 () {
+function inst_php74 () {
 
 	apt install php7.4-bcmath php7.4-bz2 php7.4-cgi php7.4-curl php7.4-dba -y
 	apt install php7.4-gd php7.4-gmp php7.4-imap php7.4-fpm php7.4-json php7.4-xml php7.4-common -y
@@ -370,7 +370,7 @@ EOF
 
 }
 
-funtion inst_php81 () {
+function inst_php81 () {
 
 	apt install php8.1-bcmath php8.1-bz2 php8.1-cgi php8.1-curl php8.1-dba php8.1-fpm -y
 	apt install php8.1-gd php8.1-gmp php8.1-igbinary php8.1-imagick php8.1-imap php8.1-intl php8.1-ldap php8.1-mbstring -y
