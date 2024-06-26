@@ -565,8 +565,11 @@ rm logo.png
 rm logo_welcome.png
 rm styles.css
 rm logostyle.zip
+rm inst_logo.sh
 
 EOF
+
+chmod +x inst_logo.sh
 
 cd /root
 
