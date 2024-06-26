@@ -822,6 +822,7 @@ fi
 ###########################################################################
 
 
+pre_inst                 # function
 inst_base                # function
 inst_smart_nvme          # function
 inst_gat                 # function
