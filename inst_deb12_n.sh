@@ -623,8 +623,8 @@ function post_inst () {
 
 	cd /root
 	touch .bash_aliases
-    echo "alias jos='joshuto'" >> .bash_aliases
-    echo "alias gc='gat'" >> .bash_aliases
+        echo "alias jos='joshuto'" >> .bash_aliases
+        echo "alias gc='gat'" >> .bash_aliases
 	cp .bash_aliases /etc/skel/.bash_aliases
 	rm -R .spamassassin
 	rm inst_deb12_n.sh
