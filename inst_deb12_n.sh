@@ -50,7 +50,7 @@ function print_conf () {
    echo ""
 }
 
-function pre_inst () {
+function pre_inst_ssh () {
 
 	cd /root
 	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/bashrc.ini
@@ -822,30 +822,30 @@ fi
 ###########################################################################
 
 
-pre_inst                 # function
-inst_base                # function
-inst_smart_nvme          # function
-inst_gat                 # function
-inst_jos                 # function
-inst_virtualmin          # function
-inst_add_python          # function
-dis_services             # function
-inst_sury_repo           # function
-inst_php74               # function
-inst_php80               # function
-inst_php81               # function
-inst_php82               # function
-inst_php83               # function
-enable_apache_mod        # function
-inst_redis               # function
-inst_virtualmin_config   # function
-inst_logo_styles         # function
-inst_f2b                 # function
-inst_pwgen               # function
-inst_mc                  # function
-inst_kernel              # function
-inst_mariadb             # function
-post_inst                # function
+pre_inst_ssh             # function
+#inst_base                # function
+#inst_smart_nvme          # function
+#inst_gat                 # function
+#inst_jos                 # function
+#inst_virtualmin          # function
+#inst_add_python          # function
+#dis_services             # function
+#inst_sury_repo           # function
+#inst_php74               # function
+#inst_php80               # function
+#inst_php81               # function
+#inst_php82               # function
+#inst_php83               # function
+#enable_apache_mod        # function
+#inst_redis               # function
+#inst_virtualmin_config   # function
+#inst_logo_styles         # function
+#inst_f2b                 # function
+#inst_pwgen               # function
+#inst_mc                  # function
+#inst_kernel              # function
+#inst_mariadb             # function
+#post_inst                # function
 closing_msg              # function
 
 reboot
