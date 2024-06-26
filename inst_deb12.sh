@@ -703,6 +703,8 @@ EOF
 apt update
 apt upgrade -y
 
+rm inst_deb12.sh
+
 reboot
 
 
