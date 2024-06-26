@@ -16,7 +16,7 @@ wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/li_files.sh
 To install for x86 use (new version):
 
 ```
-wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/compl_files.sh && bash compl_files.sh
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/inst_deb12_n.sh && bash inst_deb12_n.sh
 ```
 
 To install for Raspberry use:
