@@ -706,6 +706,10 @@ EOF
 apt update
 apt upgrade -y
 
+cd /etc/mysql/mariadb.conf.d
+ls provider*.cnf | xargs -I{} mv {} {}.orig
+apt autoremove -y
+
 rm inst_deb12.sh
 
 reboot
