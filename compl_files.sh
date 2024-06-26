@@ -69,5 +69,5 @@ echo -e "${GREEN}The port for SSH has changed. To login use the following comand
 echo -e "        ssh root@${ip_address} -p 49153${NC}\\n"
 
 cd /root
-rm li_files.sh
+rm compl_files.sh
 reboot
