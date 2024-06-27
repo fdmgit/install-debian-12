@@ -101,6 +101,7 @@ function pre_inst_ssh () {
 	sed -i "s|X11Forwarding yes|X11Forwarding no|g" /etc/ssh/sshd_config
 	sed -i "s|session    required     pam_env.so user_readenv=1 envfile=/etc/default/locale|session    required     pam_env.so envfile=/etc/default/locale|g" /etc/pam.d/sshd
         systemctl restart sshd
+	sleep 5
 
 }
 
