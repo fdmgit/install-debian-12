@@ -275,7 +275,8 @@ EOF
         cd /etc/mysql/mariadb.conf.d
         cp 50-server.cnf 50-server.cnf.vmin
 	apt update
-	apt upgrade -y
+	#apt upgrade -y
+        echo "N" | apt upgrade -y
 	ls provider*.cnf | xargs -I{} mv {} {}.orig
 	apt autoremove -y
 
