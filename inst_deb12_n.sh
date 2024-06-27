@@ -737,15 +737,11 @@ function inst_jos () {
 #### Add joshuto (cli filemanager)
 ###################################
 
-	cd /usr/local/bin
-	wget https://github.com/kamiyaa/joshuto/releases/download/v0.9.8/joshuto-v0.9.8-x86_64-unknown-linux-gnu.tar.gz
-	tar -xvzf joshuto-v0.9.8-x86_64-unknown-linux-gnu.tar.gz
-	tar -vxzf joshuto-v0.9.8-x86_64-unknown-linux-gnu.tar.gz -C /usr/local/bin  --strip-components=1
+        cd /usr/local/bin
+        wget https://github.com/kamiyaa/joshuto/releases/download/v0.9.8/joshuto-v0.9.8-x86_64-unknown-linux-musl.tar.gz
+        tar -vxzf joshuto-v0.9.8-x86_64-unknown-linux-musl.tar.gz -C /usr/local/bin  --strip-components=1
 	chown root:root joshuto
-	chmod +x joshuto
 	rm joshuto-v0.9.8-x86_64-unknown-linux-gnu.tar.gz
-	rm -R joshuto-v0.9.8-x86_64-unknown-linux-gnu
-
 }
 
 function inst_base () {
