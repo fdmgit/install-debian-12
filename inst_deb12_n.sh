@@ -113,6 +113,9 @@ function closing_msg () {
 	echo -e "${YELLOW}ATTENTION\\n"
 	echo -e "${GREEN}The port for SSH has changed. To login use the following comand:\\n"
 	echo -e "        ssh root@${ip_address} -p 49153${NC}\\n"
+        echo ""
+	echo -e "${GREEN} Webmin page is reachable by entering https://${ip_address}:10000"
+        echo -e "${NC}\\n"
 
 }
 
@@ -762,6 +765,11 @@ function inst_base () {
 
 
 function enh_nft () {
+
+###################################
+#### add some NFT tools
+###################################
+
 
     apt install netfilter-persistent -y
 
