@@ -715,6 +715,8 @@ function inst_virtualmin () {
 	wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
 	sh virtualmin-install.sh -y
 	rm virtualmin-install.sh
+        systemctl enable nftables.service
+	systemctl daemon-reload
 
 }
 
