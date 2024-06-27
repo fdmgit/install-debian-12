@@ -6,6 +6,12 @@ To install for ARM64 use:
 wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/li_files_a.sh && bash lin_files_a.sh
 ```
 
+To install for ARM64 use (new version):
+
+```
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/inst_deb12_n_arm.sh && bash inst_deb12_n_arm.sh
+```
+
 
 To install for x86 use:
 
