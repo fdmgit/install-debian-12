@@ -273,10 +273,10 @@ deb [signed-by=/etc/apt/keyrings/mariadb-keyring.pgp] https://mirror.mva-n.net/m
 EOF
 
     cd /etc/mysql/mariadb.conf.d
-	apt update
+    apt update
     echo "N" | apt upgrade -y
-	ls provider*.cnf | xargs -I{} mv {} {}.orig
-	apt autoremove -y
+    ls provider*.cnf | xargs -I{} mv {} {}.orig
+    apt autoremove -y
 
 }
 
@@ -767,30 +767,30 @@ function inst_base () {
 
 function enh_nft () {
 
-	apt install netfilter-persistent -y
+    apt install netfilter-persistent -y
 
-	mkdir /etc/nftables
+    mkdir /etc/nftables
 
 cat >> /etc/nftables/customnft.nft <<'EOF'
 
 table inet blockedip {
-	chain input {
-		type filter hook ingress device "enp7s0" priority filter; policy accept;
+    chain input {
+        type filter hook ingress device "enp7s0" priority filter; policy accept;
     }
 }
 
 table inet allowedip {
-	chain input {
-		type filter hook ingress device "enp7s0" priority filter; policy accept;
+    chain input {
+        type filter hook ingress device "enp7s0" priority filter; policy accept;
     }
 }
 
 table ip rejectip {
-	chain input {
-		type filter hook input priority filter; policy accept;
+    chain input {
+        type filter hook input priority filter; policy accept;
 # INSERT BELOW
 
-	}
+    }
 }
 
 EOF
@@ -860,7 +860,7 @@ echo -e ""
 
 EOF
 
-	chmod +x /usr/local/bin/bip
+    chmod +x /usr/local/bin/bip
 
 }
 
