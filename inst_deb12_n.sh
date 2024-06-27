@@ -272,10 +272,15 @@ deb [signed-by=/etc/apt/keyrings/mariadb-keyring.pgp] https://mirror.mva-n.net/m
 
 EOF
 
+        cd /etc/mysql/mariadb.conf.d
+        cp 50-server.cnf 50-server.cnf.vmin
+	rm 50-server.cnf
 	apt update
 	apt upgrade -y
 
-	cd /etc/mysql/mariadb.conf.d
+        cp 50-server.cnf 50-server.cnf.orig
+	rm 50-server.cnf
+        cp 50-server.cnf.vmin 50-server.cnf
 	ls provider*.cnf | xargs -I{} mv {} {}.orig
 	apt autoremove -y
 
