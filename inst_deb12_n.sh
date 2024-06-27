@@ -775,13 +775,13 @@ cat >> /etc/nftables/customnft.nft <<'EOF'
 
 table inet blockedip {
     chain input {
-        type filter hook ingress device "enp7s0" priority filter; policy accept;
+        type filter hook ingress device "eth_device" priority filter; policy accept;
     }
 }
 
 table inet allowedip {
     chain input {
-        type filter hook ingress device "enp7s0" priority filter; policy accept;
+        type filter hook ingress device "eth_device" priority filter; policy accept;
     }
 }
 
@@ -794,6 +794,9 @@ table ip rejectip {
 }
 
 EOF
+
+    eth_device='device "'$(ip -o -4 route show to default | awk '{print $5}')'"'
+    sed -i "s|device \"eth_device\"|$eth_device|g" /etc/nftables/customnft.nft
 
 cat >> /etc/systemd/system/customnft.service <<'EOF'
 
