@@ -696,7 +696,7 @@ function post_inst () {
 	echo "alias gc='gat'" >> .bash_aliases
 	cp .bash_aliases /etc/skel/.bash_aliases
 	rm -R .spamassassin
-	rm inst_deb12_n.sh
+	rm inst_deb12_n_arm.sh
 	updatedb
 
 }
