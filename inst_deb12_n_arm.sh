@@ -820,7 +820,7 @@ WantedBy=multi-user.target
 
 EOF
 
-    systemctl enable --now customnft
+    systemctl enable customnft.service
 
 cat >> /usr/local/bin/bip <<'EOF'
 
