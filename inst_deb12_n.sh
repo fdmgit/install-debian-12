@@ -959,7 +959,7 @@ inst_pwgen               # function
 inst_mc                  # function
 inst_kernel              # function
 inst_mariadb             # function
-#enh_nft                  # function
+enh_nft                  # function
 inst_bip                 # function
 post_inst                # function
 closing_msg              # function
