@@ -955,7 +955,6 @@ inst_php83               # function
 enable_apache_mod        # function
 inst_redis               # function
 inst_virtualmin_config   # function
-read -p "Continue?: " continue
 inst_logo_styles         # function
 inst_f2b                 # function
 inst_pwgen               # function
