@@ -291,8 +291,8 @@ function inst_kernel () {
 #### Install new Linux Kernel
 ##############################
 
-	apt install linux-image-6.6.13+bpo-arm64 -y
-	apt install linux-headers-6.6.13+bpo-arm64 -y
+	apt install linux-image-6.7.12+bpo-arm64 -y
+	apt install linux-headers-6.7.12+bpo-arm64 -y
 
 }
 
