@@ -147,7 +147,7 @@ EOF
 
 }
 
-function install_virtualmin_config () {
+function inst_virtualmin_config () {
 
 ###################################
 #### add config files to Virtualmin
