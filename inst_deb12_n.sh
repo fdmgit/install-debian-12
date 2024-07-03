@@ -818,7 +818,15 @@ WantedBy=multi-user.target
 
 EOF
 
-    systemctl enable --now customnft
+    systemctl enable customnft.service
+
+}
+
+inst_bip () {
+
+###################################
+#### add some BIP tool
+###################################
 
 cat >> /usr/local/bin/bip <<'EOF'
 
@@ -952,6 +960,7 @@ inst_mc                  # function
 inst_kernel              # function
 inst_mariadb             # function
 enh_nft                  # function
+inst_bip                 # function
 post_inst                # function
 closing_msg              # function
 
