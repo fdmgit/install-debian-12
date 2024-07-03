@@ -697,7 +697,9 @@ function post_inst () {
 	cp .bash_aliases /etc/skel/.bash_aliases
 	rm -R .spamassassin
 	rm inst_deb12_n.sh
-	updatedb
+        apt update
+	apt upgrade -y
+        updatedb
 
 }
 
