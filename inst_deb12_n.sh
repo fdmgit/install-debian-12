@@ -188,6 +188,7 @@ function inst_add_python () {
 #### install additional Python modules
 ######################################
 
+        apt install python3-full -y
 	apt install python3-venv -y
 	apt install python3-pip -y
 	apt install virtualenv -y
