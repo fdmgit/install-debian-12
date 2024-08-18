@@ -749,7 +749,7 @@ function inst_jos () {
         wget https://github.com/kamiyaa/joshuto/releases/download/v0.9.8/joshuto-v0.9.8-x86_64-unknown-linux-musl.tar.gz
         tar -vxzf joshuto-v0.9.8-x86_64-unknown-linux-musl.tar.gz -C /usr/local/bin  --strip-components=1
 	chown root:root joshuto
-	rm joshuto-v0.9.8-x86_64-unknown-linux-gnu.tar.gz
+	rm joshuto-v0.9.8-x86_64-unknown-linux-musl.tar.gz
 }
 
 function inst_base () {
