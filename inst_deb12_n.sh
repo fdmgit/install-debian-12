@@ -113,15 +113,14 @@ function pre_inst_ssh () {
 function closing_msg () {
 
 	# Closing message
-	#ip_address=$(hostname -I | awk '{print $1}')
-	ip_address=$(hostname | awk '{print $1}')
+	host_name=$(hostname | awk '{print $1}')
         echo ""
 	echo -e "${YELLOW}ATTENTION\\n"
 	echo -e "${GREEN}The port for SSH has changed. To login use the following comand:\\n"
-	echo -e "${CYAN}        ssh root@${ip_address} -p 49153${NC}\\n"
+	echo -e "${CYAN}        ssh root@${host_name} -p 49153${NC}\\n"
         echo ""
 	echo -e "${GREEN} Webmin page is reachable by entering:\\n"
-        echo -e "${CYAN}        https://${ip_address}:10000"
+        echo -e "${CYAN}        https://${host_name}:10000"
         echo -e "${NC}\\n"
 
 }
