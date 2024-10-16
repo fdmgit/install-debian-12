@@ -961,7 +961,7 @@ inst_logo_styles         # function
 inst_f2b                 # function
 inst_pwgen               # function
 inst_mc                  # function
-inst_kernel              # function
+#inst_kernel              # function
 inst_mariadb             # function
 enh_nft                  # function
 inst_bip                 # function
