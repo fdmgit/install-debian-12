@@ -50,13 +50,6 @@ function print_conf () {
    echo ""
 }
 
-function timestamp () {
-    TEXT="Timestamp:"
-    DATE=`date +%d.%m.%Y`
-    TIME=`date +%T`
-    echo $TEXT $DATE $TIME 
-}
-
 
 function pre_inst_ssh () {
 
@@ -130,7 +123,7 @@ function closing_msg () {
 	echo -e "${GREEN} Webmin page is reachable by entering:\\n"
         echo -e "${CYAN}        https://${host_name}:10000"
         echo -e "${NC}\\n"
-	timestamp
+	echo -e "End Time:" `date +"%d.%m.%Y %T"`
 
 }
 
