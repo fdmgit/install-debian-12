@@ -50,6 +50,14 @@ function print_conf () {
    echo ""
 }
 
+function timestamp () {
+    TEXT="Timestamp:"
+    DATE=`date +%d.%m.%Y`
+    TIME=`date +%T`
+    echo $TEXT $DATE $TIME 
+}
+
+
 function pre_inst_ssh () {
 
 	cd /root
