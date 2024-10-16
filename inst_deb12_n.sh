@@ -130,6 +130,7 @@ function closing_msg () {
 	echo -e "${GREEN} Webmin page is reachable by entering:\\n"
         echo -e "${CYAN}        https://${host_name}:10000"
         echo -e "${NC}\\n"
+	timestamp
 
 }
 
