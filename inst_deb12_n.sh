@@ -216,6 +216,7 @@ function inst_f2b () {
         git clone https://github.com/fail2ban/fail2ban.git
         cd fail2ban
         python3 setup.py install 
+	cd /root
 	rm -r /root/fail2ban
   
 	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/jail-deb12.local
