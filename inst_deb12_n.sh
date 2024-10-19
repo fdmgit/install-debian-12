@@ -907,11 +907,17 @@ cp /usr/games/lolcat /usr/local/bin/
 
 cat >> /etc/update-motd.d/10-header <<'EOF'
 #!/bin/bash
+
+hname=$(hostname | awk '{print $1}')
+hname=$(echo $hname | cut -d"." -f 1)
 echo -e " "
 echo -e " "
-figlet -ckt "PERDBn   main" | lolcat -f | boxes -d boy
+figlet -ck $hname | lolcat -f | boxes -d boy
 echo ""
 EOF
+
+chmod +x /etc/update-motd.d/10-header
+
 }
 
 
@@ -996,6 +1002,7 @@ inst_mariadb             # function
 enh_nft                  # function
 inst_bip                 # function
 post_inst                # function
+inst_motd                # function
 closing_msg              # function
 
 reboot
