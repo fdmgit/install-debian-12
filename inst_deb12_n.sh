@@ -124,7 +124,8 @@ function closing_msg () {
         echo -e "${CYAN}        https://${host_name}:10000"
         echo -e "${NC}\\n"
 	echo -e "End Time:" `date +"%d.%m.%Y %T"`
-
+        echo ""
+	echo ""
 }
 
 function inst_logo_styles () {
