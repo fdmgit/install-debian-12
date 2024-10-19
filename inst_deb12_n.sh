@@ -900,7 +900,18 @@ function inst_motd () {
 
 cd /root
 echo "" > /etc/motd
+apt install figlet -y
+apt install boxes -y
+apt install lolcat -y
+cp /usr/games/lolcat /usr/local/bin/
 
+cat >> /etc/update-motd.d/10-header <<'EOF'
+#!/bin/bash
+echo -e " "
+echo -e " "
+figlet -ckt "PERDBn   main" | lolcat -f | boxes -d boy
+echo ""
+EOF
 }
 
 
