@@ -896,6 +896,13 @@ EOF
 
 }
 
+function inst_motd () {
+
+cd /root
+echo "" > /etc/motd
+
+}
+
 
 ##################################################
 #               Start Installation               #
