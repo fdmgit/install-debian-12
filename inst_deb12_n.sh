@@ -226,6 +226,8 @@ function inst_f2b () {
 	cp /root/jail-deb12.local jail.local
 	rm /root/jail-deb12.local
 	touch /var/log/auth.log
+        cp -av /usr/local/bin/fail2ban-* /usr/bin/
+	rm /usr/local/bin/fail2ban-*
 
 }
 
