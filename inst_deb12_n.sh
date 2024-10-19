@@ -138,7 +138,7 @@ function inst_logo_styles () {
 
 cat >> /root/inst_logo_styles.sh <<'EOF'
 
-wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/logostyle.zip
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/logostyle.zip
 unzip logostyle.zip
 cp logo.png /etc/webmin/authentic-theme/
 cp logo_welcome.png /etc/webmin/authentic-theme/
