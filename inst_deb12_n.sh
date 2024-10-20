@@ -62,7 +62,19 @@ function pre_inst_ssh () {
 
 	echo "deb http://deb.debian.org/debian/ bookworm-backports main" | tee -a /etc/apt/sources.list
 
+	###################################
+	#### enable mouse support form nano	
+        ###################################       
         sed -i "s|# set mouse|set mouse|g" /etc/nanorc
+
+	###################################
+	#### change file limit for root	
+        ################################### 
+        sed -i "s|# End of file||g" /etc/security/limits.conf
+	echo " " >> /etc/security/limits.conf
+	echo "root             soft    nofile          131072" >> /etc/security/limits.conf
+        echo " " >> /etc/security/limits.conf
+	echo "# End of file" >> /etc/security/limits.conf
 
 
 	###################################
