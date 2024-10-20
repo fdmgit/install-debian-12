@@ -71,7 +71,6 @@ function pre_inst_ssh () {
 	#### change file limit for root	
         ################################### 
         sed -i "s|# End of file||g" /etc/security/limits.conf
-	echo " " >> /etc/security/limits.conf
 	echo "root             soft    nofile          131072" >> /etc/security/limits.conf
         echo " " >> /etc/security/limits.conf
 	echo "# End of file" >> /etc/security/limits.conf
