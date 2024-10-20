@@ -277,10 +277,10 @@ action = %(action_)s
 # normal (default), ddos, extra or aggressive (combines all).
 # See "tests/files/logs/sshd" or "filter.d/sshd.conf" for usage example and details.
 mode     = ddos
+backend  = %(sshd_backend)s
 enabled  = true
 port     = ssh, 49153
 logpath  = %(sshd_log)s
-backend  = %(sshd_backend)s
 filter   = sshd[journalmatch='_COMM=sshd']
 bantime  = 24h
 findtime = 125m
