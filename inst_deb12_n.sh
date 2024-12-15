@@ -939,6 +939,10 @@ chmod +x /etc/update-motd.d/10-header
 
 }
 
+function inst_hstr () {
+   apt install hstr -y
+}   
+
 
 ##################################################
 #               Start Installation               #
