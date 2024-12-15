@@ -63,9 +63,14 @@ function pre_inst_ssh () {
 	echo "deb http://deb.debian.org/debian/ bookworm-backports main" | tee -a /etc/apt/sources.list
 
 	###################################
-	#### enable mouse support form nano	
+	#### enable mouse support for nano	
         ###################################       
         sed -i "s|# set mouse|set mouse|g" /etc/nanorc
+
+ 	###################################
+	#### enable linenumbers for nano	
+        ###################################       
+        sed -i "s|# set linenumbers|set linenumbers|g" /etc/nanorc
 
 	###################################
 	#### change file limit for root	
