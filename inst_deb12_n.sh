@@ -727,6 +727,8 @@ function post_inst () {
 	touch .bash_aliases
 	echo "alias jos='joshuto'" >> .bash_aliases
 	echo "alias gc='gat'" >> .bash_aliases
+        echo "alias ed=nano" >> .bash_aliases
+	echo "alias hh=hstr" >> .bash_aliases
 	cp .bash_aliases /etc/skel/.bash_aliases
 	rm -R .spamassassin
 	rm inst_deb12_n.sh
@@ -1004,6 +1006,7 @@ inst_base                # function
 inst_smart_nvme          # function
 inst_gat                 # function
 inst_jos                 # function
+inst_hstr                # function
 inst_virtualmin          # function
 inst_add_python          # function
 dis_services             # function
