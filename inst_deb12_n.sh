@@ -962,7 +962,7 @@ function inst_composer () {
 
 cd /root
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php composer-setup.php --install-dir=/usr/local/bin/ --filename=composer
+php composer-setup.php --install-dir=/usr/local/bin/ --filename=composer --quiet
 php -r "unlink('composer-setup.php');"
 
 }
