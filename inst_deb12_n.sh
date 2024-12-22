@@ -919,6 +919,10 @@ EOF
 
 function inst_motd () {
 
+###################################
+#### add new motd text
+###################################
+
 cd /root
 echo "" > /etc/motd
 apt install figlet -y
@@ -942,8 +946,27 @@ chmod +x /etc/update-motd.d/10-header
 }
 
 function inst_hstr () {
+
+###################################
+#### install histery tool
+###################################
+
    apt install hstr -y
 }   
+
+function inst_composer () {
+
+###################################
+#### install composer
+###################################
+
+cd /root
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php composer-setup.php --install-dir=/usr/local/bin/ --filename=composer
+php -r "unlink('composer-setup.php');"
+
+}
+
 
 
 ##################################################
@@ -1029,6 +1052,7 @@ enh_nft                  # function
 inst_bip                 # function
 post_inst                # function
 inst_motd                # function
+inst_composer            # function
 closing_msg              # function
 
 reboot
