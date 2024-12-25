@@ -685,6 +685,77 @@ EOF
 
 }
 
+function inst_php84 () {
+
+	apt install php8.4-bcmath php8.4-bz2 php8.4-cgi php8.4-curl php8.4-dba php8.4-fpm -y
+	apt install php8.4-gd php8.4-gmp php8.4-igbinary php8.4-imagick php8.4-imap php8.4-intl php8.4-ldap php8.4-mbstring -y
+	apt install php8.4-mysql php8.4-odbc php8.4-opcache php8.4-pspell php8.4-readline -y
+	apt install php8.4-redis php8.4-soap php8.4-sqlite3 php8.4-tidy php8.4-xml php8.4-xmlrpc php8.4-xsl php8.4-zip -y
+
+
+cat >> /etc/php/8.4/cgi/php.ini <<'EOF'
+
+[PHP]
+output_buffering = Off
+max_execution_time = 300
+max_input_time = 300
+memory_limit = 512M
+post_max_size = 1024M
+upload_max_filesize = 1024M
+date.timezone = Europe/Zurich
+max_input_vars = 10000
+[Session]
+session.gc_maxlifetime = 3600     
+[opcache]
+opcache.enable=1
+opcache.enable_cli=1
+opcache.jit_buffer_size=256M
+
+EOF
+
+
+cat >> /etc/php/8.4/cli/php.ini <<'EOF'
+
+[PHP]
+output_buffering = Off
+max_execution_time = 300
+max_input_time = 300
+memory_limit = 512M
+post_max_size = 1024M
+upload_max_filesize = 1024M
+date.timezone = Europe/Zurich
+max_input_vars = 10000
+[Session]
+session.gc_maxlifetime = 3600     
+[opcache]
+opcache.enable=1
+opcache.enable_cli=1
+opcache.jit_buffer_size=256M
+
+EOF
+
+cat >> /etc/php/8.4/fpm/php.ini <<'EOF'
+
+[PHP]
+output_buffering = Off
+max_execution_time = 300
+max_input_time = 300
+memory_limit = 512M
+post_max_size = 1024M
+upload_max_filesize = 1024M
+date.timezone = Europe/Zurich
+max_input_vars = 10000
+[Session]
+session.gc_maxlifetime = 3600     
+[opcache]
+opcache.enable=1
+opcache.enable_cli=1
+opcache.jit_buffer_size=256M
+
+EOF
+
+}
+
 function enable_apache_mod () {
 
 #####################################
@@ -1039,6 +1110,7 @@ inst_php80               # function
 inst_php81               # function
 inst_php82               # function
 inst_php83               # function
+inst_php84               # function
 enable_apache_mod        # function
 inst_redis               # function
 inst_virtualmin_config   # function
