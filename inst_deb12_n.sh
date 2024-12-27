@@ -133,6 +133,7 @@ function pre_inst_ssh () {
         cd public_html
         wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/index_web.php
 	mv index_web.php index.php
+        cd /root
 }
 
 
