@@ -124,6 +124,15 @@ function pre_inst_ssh () {
         systemctl restart sshd
 	sleep 5
 
+        *********************************
+	*** default web page index file
+        *********************************
+	
+        cd /etc/skel
+	mkdir public_html
+        cd public_html
+        wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/index_web.php
+	mv index_web.php index.php
 }
 
 
