@@ -821,7 +821,7 @@ function inst_virtualmin () {
 
 	#wget -O virtualmin-install.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
 	wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
-	sh virtualmin-install.sh -y
+	sh virtualmin-install.sh --minimal -y
 	rm virtualmin-install.sh
 
 }
