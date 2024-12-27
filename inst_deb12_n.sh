@@ -780,9 +780,9 @@ function dis_services () {
 	systemctl disable usermin
 	systemctl disable dovecot
 	systemctl disable proftpd
-	systemctl disable clamav-freshclam
-	systemctl disable clamav-daemon
-	systemctl disable postgrey
+	#systemctl disable clamav-freshclam
+	#systemctl disable clamav-daemon
+	#systemctl disable postgrey
 	systemctl disable postfix
 
 }
@@ -1103,7 +1103,7 @@ inst_jos                 # function
 inst_hstr                # function
 inst_virtualmin          # function
 inst_add_python          # function
-#dis_services             # function
+dis_services             # function
 inst_sury_repo           # function
 inst_php74               # function
 inst_php80               # function
