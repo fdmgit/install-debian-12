@@ -786,7 +786,7 @@ function dis_services () {
 #### Disable Services     ####
 ##############################
 
-	systemctl disable named
+	#systemctl disable named
 	systemctl disable usermin
 	systemctl disable dovecot
 	systemctl disable proftpd
