@@ -175,6 +175,18 @@ rm styles.css
 rm logostyle.zip
 rm inst_logo_styles.sh
 
+cd //home/._default_hostname/
+wget -O index.html https://raw.githubusercontent.com/fdmgit/install-debian-12/main/index_web.php
+
+maindomain="$(hostname)"
+sed  -i  's|<?php echo $_SERVER\[||g' index.html
+sed  -i  's|\]; ?>||g' index.html
+sed  -i  "s|'HTTP_HOST'|$maindomain|g" index.html
+
+chown _default_hostname:_default_hostname index.html
+rm /home/._default_hostname/index.php
+cd /root
+
 EOF
 
 	chmod +x /root/inst_logo_styles.sh
