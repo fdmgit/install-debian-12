@@ -189,6 +189,7 @@ apt -y purge bind9-utils
 apt -y dns-root-data
 rm -r /var/cache/bind/
 rm /etc/apparmor.d/local/*
+apt -y autoremove && apt -y autoclean
 
 EOF
 
