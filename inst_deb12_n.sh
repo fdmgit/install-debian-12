@@ -184,6 +184,12 @@ cd /root
 systemctl stop named
 systemctl disable named
 
+apt -y purge bind9
+apt -y purge bind9-utils
+apt -y dns-root-data
+rm -r /var/cache/bind/
+rm /etc/apparmor.d/local/*
+
 EOF
 
 	chmod +x /root/inst_logo_styles.sh
