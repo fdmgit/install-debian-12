@@ -181,6 +181,8 @@ sed  -i  "s|<?php echo \$_SERVER\['HTTP_HOST'\]; ?>|$(hostname)|g" index.html
 chown _default_hostname:_default_hostname index.html
 rm index.php
 cd /root
+systemctl stop named
+systemctl disable named
 
 EOF
 
