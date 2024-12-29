@@ -181,6 +181,11 @@ sed  -i  "s|<?php echo \$_SERVER\['HTTP_HOST'\]; ?>|$(hostname)|g" index.html
 chown _default_hostname:_default_hostname index.html
 rm index.php
 cd /root
+
+###################################
+#### remove bind9, dovecot 
+###################################
+
 systemctl stop named
 systemctl disable named
 
@@ -189,7 +194,10 @@ apt -y purge bind9-utils
 apt -y dns-root-data
 rm -r /var/cache/bind/
 rm /etc/apparmor.d/local/*
+apt purge dovecot-core dovecot-imapd dovecot-pop3d -y
 apt -y autoremove && apt -y autoclean
+
+reboot
 
 EOF
 
