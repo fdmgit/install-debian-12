@@ -853,8 +853,8 @@ function inst_virtualmin () {
 
 	cd /root
 
-	wget -O virtualmin-install.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
-	#wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
+	#wget -O virtualmin-install.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
+	wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
 	sh virtualmin-install.sh --minimal -y
 	rm virtualmin-install.sh
 
@@ -1148,7 +1148,7 @@ inst_php84               # function
 enable_apache_mod        # function
 inst_redis               # function
 inst_virtualmin_config   # function
-inst_f2b                 # function
+#inst_f2b                 # function
 inst_pwgen               # function
 inst_mc                  # function
 inst_kernel              # function
