@@ -853,10 +853,12 @@ function inst_virtualmin () {
 
 	cd /root
 
-	#wget -O virtualmin-install.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
-	wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
-	#sh virtualmin-install.sh --minimal -y
-	sh virtualmin-install.sh  -y 
+	wget -O virtualmin-install.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
+	#wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
+	sh virtualmin-install.sh --minimal -y
+	#sh virtualmin-install.sh  -y 
+        apt install fail2ban -y
+	virtualmin-config-system -i=Fail2banFirewalld
 	rm virtualmin-install.sh
 
 }
