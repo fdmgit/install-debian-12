@@ -1151,7 +1151,7 @@ inst_php84               # function
 enable_apache_mod        # function
 inst_redis               # function
 inst_virtualmin_config   # function
-#inst_f2b                 # function
+inst_f2b                 # function
 inst_pwgen               # function
 inst_mc                  # function
 inst_kernel              # function
