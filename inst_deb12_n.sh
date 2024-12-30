@@ -279,7 +279,7 @@ function inst_f2b () {
 	rm /root/jail-deb12.local
 cat >> /etc/fail2ban/fail2ban.local <<'EOF'
 
-[DEFAULT]
+[Definition]
 allowipv6 = auto
 
 EOF
