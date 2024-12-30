@@ -269,6 +269,8 @@ function inst_f2b () {
         python3 setup.py install 
 	cd /root
 	rm -r /root/fail2ban
+
+        apt -y install python3-systemd
   
 	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/jail-deb12.local
 	cd /etc/fail2ban
