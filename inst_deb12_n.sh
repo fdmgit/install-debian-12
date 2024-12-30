@@ -194,6 +194,7 @@ apt -y purge bind9-utils
 apt -y purge dns-root-data
 rm -r /var/cache/bind/
 rm /etc/apparmor.d/local/*
+apt purge procmail procmail-wrapper -y
 apt purge dovecot-core dovecot-imapd dovecot-pop3d -y
 rm -r /var/lib/dovecot/
 rm -r /etc/dovecot/
