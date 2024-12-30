@@ -277,6 +277,13 @@ function inst_f2b () {
 	mv jail.local jail.local.orig
 	cp /root/jail-deb12.local jail.local
 	rm /root/jail-deb12.local
+cat >> /etc/fail2ban/fail2ban.local <<'EOF'
+
+[DEFAULT]
+allowipv6 = auto
+
+EOF
+ 
 	touch /var/log/auth.log
         cp -av /usr/local/bin/fail2ban-* /usr/bin/
 	rm /usr/local/bin/fail2ban-*
