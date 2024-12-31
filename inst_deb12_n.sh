@@ -1056,6 +1056,7 @@ cat >> /etc/update-motd.d/10-header <<'EOF'
 
 hname=$(hostname | awk '{print $1}')
 hname=$(echo $hname | cut -d"." -f 1)
+hname=${hname^^}
 echo -e " "
 echo -e " "
 figlet -c -k -f big $hname | lolcat -f | boxes -d boy 
