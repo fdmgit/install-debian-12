@@ -850,7 +850,16 @@ function post_inst () {
 	cp .bash_aliases /etc/skel/.bash_aliases
 	rm -R .spamassassin
 	rm inst_deb12_n.sh
-        apt update
+        
+	################################
+	### remove default apache2 files
+        ################################
+        rm /var/www/html/index.html
+	rm /etc/apache2/sites-available/000-default.conf
+        rm /etc/apache2/sites-available/default-ssl.conf
+        ################################################
+	
+	apt update
 	apt upgrade -y
         updatedb
 
