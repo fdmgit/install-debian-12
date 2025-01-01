@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 ##################################################
 #             Var / Const Definition             #
 ##################################################
@@ -31,7 +30,6 @@ LCYAN=$(echo -en '\001\033[01;36m\002')
 #                   Functions                    #
 ##################################################
 
-
 function print_header () {
    clear
    echo ""
@@ -49,7 +47,6 @@ function print_conf () {
    echo "     Your input is:"
    echo ""
 }
-
 
 function pre_inst_ssh () {
 
@@ -304,7 +301,6 @@ function inst_pwgen () {
 
 }
 
-
 function inst_mc () {
 
 #################################
@@ -364,7 +360,6 @@ EOF
 
 }
 
-
 function inst_kernel () {
 
 ##############################
@@ -375,7 +370,6 @@ function inst_kernel () {
 	apt install linux-headers-6.11.10+bpo-amd64 -y
 
 }
-
 
 function inst_sury_repo () {
 
@@ -391,7 +385,6 @@ function inst_sury_repo () {
 	apt upgrade -y
 
 }
-
 
 function inst_php74 () {
 
@@ -546,7 +539,6 @@ opcache.jit_buffer_size=256M
 
 EOF
 
-
 cat >> /etc/php/8.1/cgi/php.ini <<'EOF'
 
 [PHP]
@@ -566,7 +558,6 @@ opcache.enable_cli=1
 opcache.jit_buffer_size=256M
 
 EOF
-
 
 cat >> /etc/php/8.1/cli/php.ini <<'EOF'
 
@@ -617,7 +608,6 @@ opcache.jit_buffer_size=256M
 
 EOF
 
-
 cat >> /etc/php/8.2/cgi/php.ini <<'EOF'
 
 [PHP]
@@ -637,7 +627,6 @@ opcache.enable_cli=1
 opcache.jit_buffer_size=256M
 
 EOF
-
 
 cat >> /etc/php/8.2/cli/php.ini <<'EOF'
 
@@ -759,7 +748,6 @@ opcache.enable_cli=1
 opcache.jit_buffer_size=256M
 
 EOF
-
 
 cat >> /etc/php/8.4/cli/php.ini <<'EOF'
 
@@ -931,13 +919,11 @@ function inst_base () {
 
 }
 
-
 function enh_nft () {
 
 ###################################
 #### add some NFT tools
 ###################################
-
 
     apt install netfilter-persistent -y
 
@@ -1098,13 +1084,9 @@ php -r "unlink('composer-setup.php');"
 
 }
 
-
-
 ##################################################
 #               Start Installation               #
 ##################################################
-
-
 
 rpasswd=""
 fqdn=""
@@ -1150,10 +1132,8 @@ if [[ "$start_inst" != [yY] ]]; then
    exit
 fi   
 
-
 ###########################################################################
 ###########################################################################
-
 
 pre_inst_ssh             # function
 inst_base                # function
@@ -1188,5 +1168,3 @@ inst_logo_styles         # function
 closing_msg              # function
 
 reboot
-
-
