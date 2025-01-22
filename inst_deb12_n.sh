@@ -1177,6 +1177,7 @@ inst_bip                 # function
 post_inst                # function
 inst_motd                # function
 inst_composer            # function
+inst_firewalldconf       # function
 inst_logo_styles         # function
 closing_msg              # function
 
