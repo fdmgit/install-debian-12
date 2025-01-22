@@ -1038,6 +1038,8 @@ WantedBy=multi-user.target
 EOF
 
     systemctl enable customnft.service
+    systemctl stop firewalld
+    systemctl start firewald
 
 }
 
@@ -1231,7 +1233,7 @@ inst_motd                # function
 inst_composer            # function
 inst_f2b                 # function
 #inst_firewalldconf       # function
-#enh_nft                  # function
+enh_nft                  # function
 inst_logo_styles         # function
 closing_msg              # function
 
