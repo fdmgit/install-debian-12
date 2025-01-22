@@ -305,8 +305,10 @@ function inst_firewalldconf () {
         cp drop.xml /etc/firewalld/zones/
 	cd /root
         systemctl restart firewalld
-	sleep 30
+	echo ""
         echo "Waiting 30 sec ....."
+	echo ""
+	sleep 30
 }
 
 function inst_pwgen () {
