@@ -1173,17 +1173,17 @@ inst_php84               # function
 enable_apache_mod        # function
 inst_redis               # function
 inst_virtualmin_config   # function
-inst_f2b                 # function
 inst_pwgen               # function
 inst_mc                  # function
 inst_kernel              # function
 inst_mariadb             # function
-enh_nft                  # function
 inst_bip                 # function
 post_inst                # function
 inst_motd                # function
 inst_composer            # function
+inst_f2b                 # function
 inst_firewalldconf       # function
+enh_nft                  # function
 inst_logo_styles         # function
 closing_msg              # function
 
