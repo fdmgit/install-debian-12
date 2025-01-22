@@ -1067,7 +1067,8 @@ hname=$(echo $hname | cut -d"." -f 1)
 hname=${hname^^}
 echo -e " "
 echo -e " "
-figlet -c -k -f big $hname | lolcat -f | boxes -d boy 
+# figlet -c -k -f big $hname | lolcat -f | boxes -d boy
+figlet -c -k -f big $hname | lolcat -f
 echo ""
 EOF
 
