@@ -213,7 +213,7 @@ cd /root
 systemctl stop firewalld
 systemctl start firewald
 echo ""
-echo "Waiting 30 sec ....."
+echo "Waiting 60 sec ....."
 echo ""
 sleep 30
 
