@@ -1040,9 +1040,9 @@ WantedBy=multi-user.target
 
 EOF
 
-    systemctl enable customnft.service
-    systemctl stop firewalld
-    systemctl start firewald
+#    systemctl enable customnft.service
+#    systemctl stop firewalld
+#    systemctl start firewald
 
 }
 
