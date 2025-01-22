@@ -219,7 +219,7 @@ EOF
         cp drop.xml /etc/firewalld/zones/
 	cd /root
         systemctl stop firewalld
-        systemctl start firewald
+        systemctl start firewalld
 	echo ""
         echo "Waiting 60 sec ....."
 	echo ""
@@ -227,7 +227,7 @@ EOF
 
         systemctl enable customnft.service
         systemctl stop firewalld
-        systemctl start firewald
+        systemctl start firewalld
 
 }
 
