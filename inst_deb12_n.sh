@@ -291,6 +291,19 @@ EOF
 
 }
 
+
+function inst_firewalldconf () {
+
+        cd /etc/firewalld
+	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/firewalldconf.tar.gz
+        tar -xvzf firewalldconf.tar.gz
+	cd /etc/firewalld/firewalldconf/ipsets
+        cp *.xml /etc/firewalld/ipsets/
+	cd /etc/firewalld/firewalldconf/zones
+        cp drop.xml /etc/firewalld/zones/
+	cd /root
+}
+
 function inst_pwgen () {
 
 ###################################
