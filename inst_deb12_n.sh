@@ -260,6 +260,11 @@ function inst_f2b () {
 ###################################
 
 	cd /root
+        apt install fail2ban
+        virtualmin-config-system -i=Fail2banFirewalld
+
+
+ 
 
 	#wget -O fail2ban_newest.deb  https://github.com/fail2ban/fail2ban/releases/download/1.1.0/fail2ban_1.1.0-1.upstream1_all.deb
 	#dpkg -i --force-confnew fail2ban_newest.deb
