@@ -196,31 +196,6 @@ apt purge dovecot-core dovecot-imapd dovecot-pop3d -y
 rm -r /var/lib/dovecot/
 rm -r /etc/dovecot/
 
-
-###################################
-#### add Firewalld configuration
-###################################
-
-
-cd /etc/firewalld
-wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/firewalldconf.tar.gz
-tar -xvzf firewalldconf.tar.gz
-cd /etc/firewalld/firewalldconf/ipsets
-cp *.xml /etc/firewalld/ipsets/
-cd /etc/firewalld/firewalldconf/zones
-cp drop.xml /etc/firewalld/zones/
-cd /root
-systemctl stop firewalld
-systemctl start firewald
-echo ""
-echo "Waiting 60 sec ....."
-echo ""
-sleep 30
-
-systemctl enable customnft.service
-systemctl stop firewalld
-systemctl start firewald
-
 apt -y autoremove && apt -y autoclean
 
 reboot
@@ -243,15 +218,16 @@ EOF
 	cd /etc/firewalld/firewalldconf/zones
         cp drop.xml /etc/firewalld/zones/
 	cd /root
-        systemctl restart firewalld
+        systemctl stop firewalld
+        systemctl start firewald
 	echo ""
-        echo "Waiting 30 sec ....."
+        echo "Waiting 60 sec ....."
 	echo ""
-	sleep 30
+	sleep 60
 
-
-
-
+        systemctl enable customnft.service
+        systemctl stop firewalld
+        systemctl start firewald
 
 }
 
