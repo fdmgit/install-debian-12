@@ -218,8 +218,8 @@ echo ""
 sleep 30
 
 systemctl enable customnft.service
-#    systemctl stop firewalld
-#    systemctl start firewald
+systemctl stop firewalld
+systemctl start firewald
 
 apt -y autoremove && apt -y autoclean
 
