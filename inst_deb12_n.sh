@@ -221,9 +221,9 @@ EOF
 	cd /root || exit
         systemctl start firewalld
 	echo ""
-        echo "Waiting 60 sec ....."
+        echo "Waiting 30 sec ....."
 	echo ""
-	sleep 60
+	sleep 30
 
         systemctl enable customnft.service
         systemctl stop firewalld
