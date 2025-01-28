@@ -1133,6 +1133,8 @@ php -r "unlink('composer-setup.php');"
 #               Start Installation               #
 ##################################################
 
+apt install dialog  # add dialog program
+
 rpasswd=""
 fqdn=""
 
