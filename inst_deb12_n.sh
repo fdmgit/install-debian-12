@@ -50,7 +50,7 @@ function print_conf () {
 
 function pre_inst_ssh () {
 
-	cd /root
+	cd /root || exit
 	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/bashrc.ini
 
 	cp bashrc.ini /root/.bashrc
@@ -89,7 +89,7 @@ function pre_inst_ssh () {
 	if [ -f /root/.ssh/authorized_keys ]; then
 		echo "file authorized_keys exists"
 	else
-		cd /root/.ssh
+		cd /root/.ssh || exit
 		wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/authorized_keys
 	fi
 
@@ -123,12 +123,12 @@ function pre_inst_ssh () {
 	### default web page index file
         #################################
 	
-        cd /etc/skel
+        cd /etc/skel || exit
 	mkdir public_html
-        cd public_html
+        cd public_html || exit
         wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/index_web.php
 	mv index_web.php index.php
-        cd /root
+        cd /root || exit
 }
 
 
@@ -155,7 +155,7 @@ function inst_logo_styles () {
 #### add logo and styles
 ###################################
 
-	cd /root
+	cd /root || exit
 
 cat >> /root/inst_logo_styles.sh <<'EOF'
 
@@ -170,12 +170,12 @@ rm styles.css
 rm logostyle.zip
 rm inst_logo_styles.sh
 
-cd //home/._default_hostname/public_html/
+cd //home/._default_hostname/public_html/ || exit
 wget -O index.html https://raw.githubusercontent.com/fdmgit/install-debian-12/main/index_web.php
 sed  -i  "s|<?php echo \$_SERVER\['HTTP_HOST'\]; ?>|$(hostname)|g" index.html
 chown _default_hostname:_default_hostname index.html
 rm index.php
-cd /root
+cd /root || exit
 
 ###################################
 #### remove bind9, dovecot 
@@ -208,15 +208,15 @@ EOF
 ###################################
 
 
-        cd /etc/firewalld
+        cd /etc/firewalld || exit
 	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/firewalldconf.tar.gz
         tar -xvzf firewalldconf.tar.gz
 	systemctl stop firewalld
-	cd /etc/firewalld/firewalldconf/ipsets
+	cd /etc/firewalld/firewalldconf/ipsets || exit
         cp ./*.xml /etc/firewalld/ipsets/
-	cd /etc/firewalld/firewalldconf/zones
+	cd /etc/firewalld/firewalldconf/zones || exit
         cp drop.xml /etc/firewalld/zones/
-	cd /root
+	cd /root || exit
         systemctl start firewalld
 	echo ""
         echo "Waiting 60 sec ....."
@@ -235,9 +235,9 @@ function inst_virtualmin_config () {
 #### add config files to Virtualmin
 ###################################
 
-	cd /etc/webmin/virtual-server/plans
+	cd /etc/webmin/virtual-server/plans || exit
 	wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/160880314564582
-	cd /etc/webmin/virtual-server/templates
+	cd /etc/webmin/virtual-server/templates || exit
 	wget https://raw.githubusercontent.com/fdmgit/virtualmin/main/server-level.tar.gz
 	tar -xvzf server-level.tar.gz
 	rm server-level.tar.gz
@@ -282,7 +282,7 @@ function inst_f2b () {
 #### new fail2ban and jail
 ###################################
 
-	cd /root
+	cd /root || exit
         apt install fail2ban
         virtualmin-config-system -i=Fail2banFirewalld
 
@@ -291,15 +291,15 @@ function inst_f2b () {
 	#rm fail2ban_newest.deb
 
         git clone https://github.com/fail2ban/fail2ban.git
-        cd fail2ban
+        cd fail2ban || exit
         python3 setup.py install 
-	cd /root
+	cd /root || exit
 	rm -r /root/fail2ban
 
         apt -y install python3-systemd
   
 	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/jail-deb12.local
-	cd /etc/fail2ban
+	cd /etc/fail2ban || exit
 	mv jail.local jail.local.orig
 	cp /root/jail-deb12.local jail.local
 	rm /root/jail-deb12.local
@@ -319,14 +319,14 @@ EOF
 
 function inst_firewalldconf () {
 
-        cd /etc/firewalld
+        cd /etc/firewalld || exit
 	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/firewalldconf.tar.gz
         tar -xvzf firewalldconf.tar.gz
-	cd /etc/firewalld/firewalldconf/ipsets
-        cp ./*.xml /etc/firewalld/ipsets/
-	cd /etc/firewalld/firewalldconf/zones
+	cd /etc/firewalld/firewalldconf/ipsets || exit
+        cp ./*.xml /etc/firewalld/ipsets/ 
+	cd /etc/firewalld/firewalldconf/zones || exit
         cp drop.xml /etc/firewalld/zones/
-	cd /root
+	cd /root || exit
         systemctl restart firewalld
 	echo ""
         echo "Waiting 30 sec ....."
@@ -350,7 +350,7 @@ function inst_mc () {
 #### Install Midnight Commander
 #################################
 
-	cd /usr/share/keyrings
+	cd /usr/share/keyrings || exit
 	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/tataranovich-keyring.gpg
 	echo "# Repository for Midnight Commander" > /etc/apt/sources.list.d/mc.list
 	echo "deb [signed-by=/usr/share/keyrings/tataranovich-keyring.gpg] http://www.tataranovich.com/debian bookworm main" >> /etc/apt/sources.list.d/mc.list
@@ -366,7 +366,7 @@ function inst_smart_nvme () {
 #### Install smartmontools & nvme-cli
 ######################################
 
-	cd /root
+	cd /root || exit
 	wget  https://raw.githubusercontent.com/fdmgit/install-debian-12/main/smartmontools_7.4-2~bpo12+1_amd64.deb
 	dpkg -i smartmontools_7.4-2~bpo12+1_amd64.deb
 	rm smartmontools_7.4-2~bpo12+1_amd64.deb
@@ -382,7 +382,7 @@ function inst_mariadb () {
 
 	curl -o /etc/apt/keyrings/mariadb-keyring.pgp 'https://mariadb.org/mariadb_release_signing_key.pgp'
 
-	cd /etc/apt/sources.list.d
+	cd /etc/apt/sources.list.d || exit
 	touch mariadb.list
 
 cat >> /etc/apt/sources.list.d/mariadb.list <<'EOF'
@@ -395,7 +395,7 @@ deb [signed-by=/etc/apt/keyrings/mariadb-keyring.pgp] https://mirror.mva-n.net/m
 
 EOF
 
-    cd /etc/mysql/mariadb.conf.d
+    cd /etc/mysql/mariadb.conf.d || exit
     apt update
     echo "N" | apt upgrade -y
     ls provider*.cnf | xargs -I{} mv {} {}.orig
@@ -872,7 +872,7 @@ function post_inst () {
 #### Update locate DB
 ##############################
 
-	cd /root
+	cd /root || exit
 	touch .bash_aliases
 	{ echo "alias jos='joshuto'" ; echo "alias gc='gat'" ; echo "alias ed=nano" ;  echo "alias hh=hstr" ; } >> .bash_aliases
 	cp .bash_aliases /etc/skel/.bash_aliases
@@ -901,7 +901,7 @@ function inst_virtualmin () {
 
 	apt install gpg-agent -y
 
-	cd /root
+	cd /root || exit
 
 	wget -O virtualmin-install.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
 	#wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
@@ -919,7 +919,7 @@ function inst_gat () {
 #### Add gat (replacement for cat)
 ###################################
 
-	cd /usr/local/bin
+	cd /usr/local/bin || exit
 	wget https://github.com/koki-develop/gat/releases/download/v0.19.3/gat_Linux_x86_64.tar.gz
 	tar -xvzf gat_Linux_x86_64.tar.gz
 	chown root:root gat
@@ -936,7 +936,7 @@ function inst_jos () {
 #### Add joshuto (cli filemanager)
 ###################################
 
-        cd /usr/local/bin
+        cd /usr/local/bin || exit
         wget https://github.com/kamiyaa/joshuto/releases/download/v0.9.8/joshuto-v0.9.8-x86_64-unknown-linux-musl.tar.gz
         tar -vxzf joshuto-v0.9.8-x86_64-unknown-linux-musl.tar.gz -C /usr/local/bin  --strip-components=1
 	chown root:root joshuto
@@ -1081,7 +1081,7 @@ function inst_motd () {
 #### add new motd text
 ###################################
 
-cd /root
+cd /root || exit
 echo "" > /etc/motd
 apt install figlet -y
 apt install boxes -y
@@ -1119,7 +1119,7 @@ function inst_composer () {
 #### install composer
 ###################################
 
-cd /root
+cd /root || exit
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php composer-setup.php --install-dir=/usr/local/bin/ --filename=composer --quiet
 php -r "unlink('composer-setup.php');"
