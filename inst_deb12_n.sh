@@ -73,9 +73,7 @@ function pre_inst_ssh () {
 	#### change file limit for root	
         ################################### 
         sed -i "s|# End of file||g" /etc/security/limits.conf
-	echo "root             soft    nofile          131072" >> /etc/security/limits.conf
-        echo " " >> /etc/security/limits.conf
-	echo "# End of file" >> /etc/security/limits.conf
+	{ echo "root             soft    nofile          131072" ; echo " " ; echo "# End of file" ; } >> /etc/security/limits.conf
 
 
 	###################################
@@ -215,7 +213,7 @@ EOF
         tar -xvzf firewalldconf.tar.gz
 	systemctl stop firewalld
 	cd /etc/firewalld/firewalldconf/ipsets
-        cp *.xml /etc/firewalld/ipsets/
+        cp ./*.xml /etc/firewalld/ipsets/
 	cd /etc/firewalld/firewalldconf/zones
         cp drop.xml /etc/firewalld/zones/
 	cd /root
@@ -325,7 +323,7 @@ function inst_firewalldconf () {
 	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/firewalldconf.tar.gz
         tar -xvzf firewalldconf.tar.gz
 	cd /etc/firewalld/firewalldconf/ipsets
-        cp *.xml /etc/firewalld/ipsets/
+        cp ./*.xml /etc/firewalld/ipsets/
 	cd /etc/firewalld/firewalldconf/zones
         cp drop.xml /etc/firewalld/zones/
 	cd /root
@@ -876,10 +874,7 @@ function post_inst () {
 
 	cd /root
 	touch .bash_aliases
-	echo "alias jos='joshuto'" >> .bash_aliases
-	echo "alias gc='gat'" >> .bash_aliases
-        echo "alias ed=nano" >> .bash_aliases
-	echo "alias hh=hstr" >> .bash_aliases
+	{ echo "alias jos='joshuto'" ; echo "alias gc='gat'" ; echo "alias ed=nano" ;  echo "alias hh=hstr" ; } >> .bash_aliases
 	cp .bash_aliases /etc/skel/.bash_aliases
 	rm -R .spamassassin
 	rm inst_deb12_n.sh
@@ -959,7 +954,7 @@ function inst_base () {
 	apt install plocate sntp ntpdate software-properties-common curl -y 
 	timedatectl set-timezone Europe/Zurich
 
-	hostnamectl set-hostname $fqdn  # set hostname
+	hostnamectl set-hostname "$fqdn"  # set hostname
 	echo "root:${rpasswd}" | chpasswd    # set root password -
 
 }
@@ -1142,7 +1137,7 @@ print_header
 
 until [ ${#rpasswd} -gt 11 ]; do
    echo -en "${GREEN}     Enter new root password [min. length is 12 char]: ${YELLOW} "
-   read -e -i "${rpasswd}" rpasswd
+   read -e -i -r "${rpasswd}" rpasswd
    if [ ${#rpasswd} -lt 12 ]; then
       print_header
       echo -e "${LRED}     Password has too few characters"
@@ -1156,7 +1151,7 @@ until [[ "$fqdn" =~ ^.*\..*\..*$ ]]; do
 #   print_header
 #   echo -e "${GREEN}     Enter new root password [min. length is 12 char]:  ${YELLOW}${rpasswd}"
    echo -en "${GREEN}     Enter a full qualified domain name:               ${YELLOW} "
-   read -e -i "${fqdn}" fqdn
+   read -e -i -r "${fqdn}" fqdn
    if [[ "$fqdn" =~ ^.*\..*\..*$ ]]; then
       print_conf
       echo -e "${GREEN}     New root password:           ${YELLOW}${rpasswd}"
