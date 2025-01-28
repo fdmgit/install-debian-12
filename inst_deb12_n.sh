@@ -1137,7 +1137,7 @@ print_header
 
 until [ ${#rpasswd} -gt 11 ]; do
    echo -en "${GREEN}     Enter new root password [min. length is 12 char]: ${YELLOW} "
-   read -e -i -r "${rpasswd}" rpasswd
+   read -e -i "${rpasswd}" rpasswd
    if [ ${#rpasswd} -lt 12 ]; then
       print_header
       echo -e "${LRED}     Password has too few characters"
@@ -1151,7 +1151,7 @@ until [[ "$fqdn" =~ ^.*\..*\..*$ ]]; do
 #   print_header
 #   echo -e "${GREEN}     Enter new root password [min. length is 12 char]:  ${YELLOW}${rpasswd}"
    echo -en "${GREEN}     Enter a full qualified domain name:               ${YELLOW} "
-   read -e -i -r "${fqdn}" fqdn
+   read -e -i "${fqdn}" fqdn
    if [[ "$fqdn" =~ ^.*\..*\..*$ ]]; then
       print_conf
       echo -e "${GREEN}     New root password:           ${YELLOW}${rpasswd}"
