@@ -194,6 +194,8 @@ apt purge dovecot-core dovecot-imapd dovecot-pop3d -y
 rm -r /var/lib/dovecot/
 rm -r /etc/dovecot/
 
+mariadb-secure-installation
+
 apt -y autoremove && apt -y autoclean
 
 reboot
