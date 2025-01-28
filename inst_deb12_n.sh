@@ -7,13 +7,13 @@
 #okinput=true
 
 NC=$(echo -en '\001\033[0m\002')
-RED=$(echo -en '\001\033[00;31m\002')
+#RED=$(echo -en '\001\033[00;31m\002')
 GREEN=$(echo -en '\001\033[00;32m\002')
 YELLOW=$(echo -en '\001\033[00;33m\002')
 #BLUE=$(echo -en '\001\033[00;34m\002')
 #MAGENTA=$(echo -en '\001\033[00;35m\002')
 #PURPLE=$(echo -en '\001\033[00;35m\002')
-#CYAN=$(echo -en '\001\033[00;36m\002')
+CYAN=$(echo -en '\001\033[00;36m\002')
 #WHITE=$(echo -en '\001\033[01;37m\002')
 
 #LIGHTGRAY=$(echo -en '\001\033[00;37m\002')
