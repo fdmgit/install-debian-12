@@ -398,7 +398,8 @@ EOF
     cd /etc/mysql/mariadb.conf.d || exit
     apt update
     echo "N" | apt upgrade -y
-    ls provider*.cnf | xargs -I{} mv {} {}.orig
+    #ls provider*.cnf | xargs -I{} mv {} {}.orig
+    find provider*.cnf -print0 | xargs -0 -I{} mv {} {}.orig
     apt autoremove -y
 
 }
