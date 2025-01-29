@@ -204,31 +204,6 @@ EOF
 
 	chmod +x /root/inst_logo_styles.sh
 
-
-###################################
-#### add Firewalld configuration
-###################################
-
-
-        cd /etc/firewalld || exit
-	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/firewalldconf.tar.gz
-        tar -xvzf firewalldconf.tar.gz
-	systemctl stop firewalld
-	cd /etc/firewalld/firewalldconf/ipsets || exit
-        cp ./*.xml /etc/firewalld/ipsets/
-	cd /etc/firewalld/firewalldconf/zones || exit
-        cp drop.xml /etc/firewalld/zones/
-	cd /root || exit
-        systemctl start firewalld
-	echo ""
-        echo "Waiting 60 sec ....."
-	echo ""
-	sleep 60
-
-        systemctl enable customnft.service
-        systemctl stop firewalld
-        systemctl start firewalld
-
 }
 
 function inst_virtualmin_config () {
@@ -321,19 +296,30 @@ EOF
 
 function inst_firewalldconf () {
 
+###################################
+#### add Firewalld configuration
+###################################
+
+
         cd /etc/firewalld || exit
 	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/firewalldconf.tar.gz
         tar -xvzf firewalldconf.tar.gz
+	systemctl stop firewalld
 	cd /etc/firewalld/firewalldconf/ipsets || exit
-        cp ./*.xml /etc/firewalld/ipsets/ 
+        cp ./*.xml /etc/firewalld/ipsets/
 	cd /etc/firewalld/firewalldconf/zones || exit
         cp drop.xml /etc/firewalld/zones/
 	cd /root || exit
-        systemctl restart firewalld
+        systemctl start firewalld
 	echo ""
         echo "Waiting 60 sec ....."
 	echo ""
 	sleep 60
+
+        systemctl enable customnft.service
+        systemctl stop firewalld
+        systemctl start firewalld
+
 }
 
 function inst_pwgen () {
@@ -1210,9 +1196,9 @@ post_inst                # function
 inst_motd                # function
 inst_composer            # function
 inst_f2b                 # function
-#inst_firewalldconf       # function
 enh_nft                  # function
 inst_logo_styles         # function
+inst_firewalldconf       # function
 closing_msg              # function
 
 reboot
