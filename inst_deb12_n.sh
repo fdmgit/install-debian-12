@@ -331,9 +331,9 @@ function inst_firewalldconf () {
 	cd /root || exit
         systemctl restart firewalld
 	echo ""
-        echo "Waiting 30 sec ....."
+        echo "Waiting 60 sec ....."
 	echo ""
-	sleep 30
+	sleep 60
 }
 
 function inst_pwgen () {
@@ -1133,7 +1133,7 @@ php -r "unlink('composer-setup.php');"
 #               Start Installation               #
 ##################################################
 
-apt install dialog  # add dialog program
+apt install dialog -y  # add dialog program
 
 rpasswd=""
 fqdn=""
