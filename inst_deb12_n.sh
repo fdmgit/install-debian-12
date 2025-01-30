@@ -111,24 +111,24 @@ function pre_inst_ssh () {
 	echo -e "# Restrict key exchange, cipher, and MAC algorithms, as per sshaudit.com\n# hardening guide.\n\nKexAlgorithms sntrup761x25519-sha512@openssh.com,curve25519-sha256,curve25519-sha256@libssh.org,gss-curve25519-sha256-,diffie-hellman-group16-sha512,gss-group16-sha512-,diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha256\n\nCiphers aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr\n\nMACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,umac-128-etm@openssh.com\n\nHostKeyAlgorithms sk-ssh-ed25519-cert-v01@openssh.com,ssh-ed25519-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,ssh-ed25519,rsa-sha2-512,rsa-sha2-256\n\nRequiredRSASize 3072\n\nCASignatureAlgorithms sk-ssh-ed25519@openssh.com,ssh-ed25519,rsa-sha2-512,rsa-sha2-256\n\nGSSAPIKexAlgorithms gss-curve25519-sha256-,gss-group16-sha512-\n\nHostbasedAcceptedAlgorithms sk-ssh-ed25519-cert-v01@openssh.com,ssh-ed25519-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,ssh-ed25519,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-512,rsa-sha2-256-cert-v01@openssh.com,rsa-sha2-256\n\nPubkeyAcceptedAlgorithms sk-ssh-ed25519-cert-v01@openssh.com,ssh-ed25519-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,ssh-ed25519,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-512,rsa-sha2-256-cert-v01@openssh.com,rsa-sha2-256\n\n" > /etc/ssh/sshd_config.d/ssh-audit_hardening.conf
 
 	sed -i "s|\#Port 22|Port 49153|g" /etc/ssh/sshd_config
-        sed -i "s|\#LoginGraceTime 2m|LoginGraceTime 1m|g" /etc/ssh/sshd_config
+    sed -i "s|\#LoginGraceTime 2m|LoginGraceTime 1m|g" /etc/ssh/sshd_config
 	sed -i "s|PermitRootLogin without-password|PermitRootLogin prohibit-password|g" /etc/ssh/sshd_config
 	sed -i "s|\#MaxAuthTries 6|MaxAuthTries 4|g" /etc/ssh/sshd_config
 	sed -i "s|X11Forwarding yes|X11Forwarding no|g" /etc/ssh/sshd_config
 	sed -i "s|session    required     pam_env.so user_readenv=1 envfile=/etc/default/locale|session    required     pam_env.so envfile=/etc/default/locale|g" /etc/pam.d/sshd
-        systemctl restart sshd
+    systemctl restart sshd
 	sleep 5
 
-        #################################
+    #################################
 	### default web page index file
-        #################################
+    #################################
 	
-        cd /etc/skel || exit
+    cd /etc/skel || exit
 	mkdir public_html
-        cd public_html || exit
-        wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/index_web.php
+    cd public_html || exit
+    wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/index_web.php
 	mv index_web.php index.php
-        cd /root || exit
+    cd /root || exit
 }
 
 
@@ -136,16 +136,16 @@ function closing_msg () {
 
 	# Closing message
 	host_name=$(hostname | awk '{print $1}')
-        echo ""
+    echo ""
 	echo -e "${YELLOW}ATTENTION\\n"
 	echo -e "${GREEN}The port for SSH has changed. To login use the following comand:\\n"
 	echo -e "${CYAN}        ssh root@${host_name} -p 49153${NC}\\n"
-        echo ""
+    echo ""
 	echo -e "${GREEN} Webmin page is reachable by entering:\\n"
-        echo -e "${CYAN}        https://${host_name}:10000"
-        echo -e "${NC}\\n"
+    echo -e "${CYAN}        https://${host_name}:10000"
+    echo -e "${NC}\\n"
 	echo -e "End Time:" "$(date +"%d.%m.%Y %T")"
-        echo ""
+    echo ""
 	echo ""
 }
 
@@ -246,7 +246,7 @@ function inst_add_python () {
 #### install additional Python modules
 ######################################
 
-        apt install python3-full -y
+    apt install python3-full -y
 	apt install python3-venv -y
 	apt install python3-pip -y
 	apt install virtualenv -y
@@ -260,20 +260,20 @@ function inst_f2b () {
 ###################################
 
 	cd /root || exit
-        apt install fail2ban
-        virtualmin-config-system -i=Fail2banFirewalld
+    apt install fail2ban
+    virtualmin-config-system -i=Fail2banFirewalld
 
 	#wget -O fail2ban_newest.deb  https://github.com/fail2ban/fail2ban/releases/download/1.1.0/fail2ban_1.1.0-1.upstream1_all.deb
 	#dpkg -i --force-confnew fail2ban_newest.deb
 	#rm fail2ban_newest.deb
 
-        git clone https://github.com/fail2ban/fail2ban.git
-        cd fail2ban || exit
-        python3 setup.py install 
+    git clone https://github.com/fail2ban/fail2ban.git
+    cd fail2ban || exit
+    python3 setup.py install 
 	cd /root || exit
 	rm -r /root/fail2ban
 
-        apt -y install python3-systemd
+    apt -y install python3-systemd
   
 	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/jail-deb12.local
 	cd /etc/fail2ban || exit
@@ -288,7 +288,7 @@ allowipv6 = auto
 EOF
  
 	touch /var/log/auth.log
-        cp -av /usr/local/bin/fail2ban-* /usr/bin/
+    cp -av /usr/local/bin/fail2ban-* /usr/bin/
 	rm /usr/local/bin/fail2ban-*
 
 }
@@ -301,24 +301,24 @@ function inst_firewalldconf () {
 ###################################
 
 
-        cd /etc/firewalld || exit
+    cd /etc/firewalld || exit
 	wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/firewalldconf.tar.gz
-        tar -xvzf firewalldconf.tar.gz
+    tar -xvzf firewalldconf.tar.gz
 	systemctl stop firewalld
 	cd /etc/firewalld/firewalldconf/ipsets || exit
-        cp ./*.xml /etc/firewalld/ipsets/
+    cp ./*.xml /etc/firewalld/ipsets/
 	cd /etc/firewalld/firewalldconf/zones || exit
-        cp drop.xml /etc/firewalld/zones/
+    cp drop.xml /etc/firewalld/zones/
 	cd /root || exit
-        systemctl start firewalld
+    systemctl start firewalld
 	echo ""
-        echo "Waiting 60 sec ....."
+    echo "Waiting 60 sec ....."
 	echo ""
 	sleep 60
 
-        systemctl enable customnft.service
-        systemctl stop firewalld
-        systemctl start firewalld
+    systemctl enable customnft.service
+    systemctl stop firewalld
+    systemctl start firewalld
 
 }
 
@@ -870,15 +870,15 @@ function post_inst () {
         
 	################################
 	### remove default apache2 files
-        ################################
-        rm /var/www/html/index.html
+    ################################
+    rm /var/www/html/index.html
 	rm /etc/apache2/sites-available/000-default.conf
-        rm /etc/apache2/sites-available/default-ssl.conf
-        ################################################
+    rm /etc/apache2/sites-available/default-ssl.conf
+    ################################################
 	
 	apt update
 	apt upgrade -y
-        updatedb
+    updatedb
 
 }
 
@@ -896,7 +896,7 @@ function inst_virtualmin () {
 	#wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
 	sh virtualmin-install.sh --minimal -y
 	#sh virtualmin-install.sh  -y 
-        apt install fail2ban -y
+    apt install fail2ban -y
 	virtualmin-config-system -i=Fail2banFirewalld
 	rm virtualmin-install.sh
 
@@ -925,9 +925,9 @@ function inst_jos () {
 #### Add joshuto (cli filemanager)
 ###################################
 
-        cd /usr/local/bin || exit
-        wget https://github.com/kamiyaa/joshuto/releases/download/v0.9.8/joshuto-v0.9.8-x86_64-unknown-linux-musl.tar.gz
-        tar -vxzf joshuto-v0.9.8-x86_64-unknown-linux-musl.tar.gz -C /usr/local/bin  --strip-components=1
+    cd /usr/local/bin || exit
+    wget https://github.com/kamiyaa/joshuto/releases/download/v0.9.8/joshuto-v0.9.8-x86_64-unknown-linux-musl.tar.gz
+    tar -vxzf joshuto-v0.9.8-x86_64-unknown-linux-musl.tar.gz -C /usr/local/bin  --strip-components=1
 	chown root:root joshuto
 	rm joshuto-v0.9.8-x86_64-unknown-linux-musl.tar.gz
 }
