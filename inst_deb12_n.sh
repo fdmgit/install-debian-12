@@ -1115,7 +1115,7 @@ function inst_composer() {
 #               Start Installation               #
 ##################################################
 
-apt install dialog -y # add dialog program
+#apt install dialog -y # add dialog program
 
 rpasswd=""
 fqdn=""
