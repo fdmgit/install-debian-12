@@ -940,7 +940,7 @@ function inst_base() {
     ###################################
     apt update
     apt upgrade -y
-    apt install plocate sntp ntpdate software-properties-common curl -y
+    apt install plocate sntp ntpdate software-properties-common curl imagemagick -y
     timedatectl set-timezone Europe/Zurich
 
     hostnamectl set-hostname "$fqdn"  # set hostname
