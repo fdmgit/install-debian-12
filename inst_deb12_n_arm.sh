@@ -195,6 +195,7 @@ apt purge dovecot-core dovecot-imapd dovecot-pop3d -y
 rm -r /var/lib/dovecot/
 rm -r /etc/dovecot/
 
+# printf '\nn\nn\ny\ny\ny\ny\n' | mariadb-secure-installation
 mariadb-secure-installation
 
 apt -y autoremove && apt -y autoclean
