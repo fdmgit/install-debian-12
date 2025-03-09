@@ -8,16 +8,10 @@ wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/inst_deb12_
 ```
 
 
-To install for x86 use :
+To install for amd64 use :
 
 ```
-wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/inst_deb12_n.sh && bash inst_deb12_n.sh
-```
-
-To install for x86 use (new version):
-
-```
-wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/inst_deb12_n2.sh && bash inst_deb12_n2.sh
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/inst_deb12_amd64.sh && bash inst_deb12_amd64.sh
 ```
 
 To install for x86 use (test version):
