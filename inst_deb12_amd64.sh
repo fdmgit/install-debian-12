@@ -412,14 +412,8 @@ function inst_sury_repo() {
     apt -y install lsb-release apt-transport-https ca-certificates
 
     echo | curl -sSL https://packages.sury.org/apache2/README.txt | sudo bash -xe
-    #### Fix as https://packages.sury.org/apache2/README.txt has an error
-    # sh -c 'echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-apache2.gpg] https://packages.sury.org/apache2/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/apache2.list'
-    ####
  
     echo | curl -sSL https://packages.sury.org/php/README.txt | sudo bash -xe
-    #### Fix as https://packages.sury.org/php/README.txt has an error
-    # sh -c 'echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
-    ####
     
     apt update
     apt upgrade -y
