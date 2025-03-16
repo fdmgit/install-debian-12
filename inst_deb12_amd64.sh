@@ -861,7 +861,7 @@ function post_inst() {
     } >>.bash_aliases
     cp .bash_aliases /etc/skel/.bash_aliases
     rm -R .spamassassin
-    rm inst_deb12_n.sh
+    rm inst_deb12_arm64_min.sh
 
     ################################
     ### remove default apache2 files
