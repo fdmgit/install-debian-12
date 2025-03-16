@@ -15,6 +15,13 @@ wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/inst_deb12_
 ```
 
 
+To install for amd64 (min) use :
+
+```
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/inst_deb12_amd64_min.sh && bash inst_deb12_amd64_min.sh
+```
+
+
 To install for Raspberry use:
 
 ```
