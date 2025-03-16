@@ -889,10 +889,10 @@ function inst_virtualmin() {
 
     wget -O virtualmin-install.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
     #wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
-    yes | sh virtualmin-install.sh --type mini  #  < full | mini >
+    yes | sh virtualmin-install.sh --type full  #  < full | mini >
     #sh virtualmin-install.sh  -y
-    apt install fail2ban -y
-    virtualmin-config-system -i=Fail2banFirewalld
+    #apt install fail2ban -y
+    #virtualmin-config-system -i=Fail2banFirewalld
     rm virtualmin-install.sh
 
 }
@@ -1160,35 +1160,35 @@ fi
 
 pre_inst_ssh           # function
 inst_base              # function
-inst_smart_nvme        # function
-inst_gat               # function
-inst_jos               # function
-inst_hstr              # function
+#inst_smart_nvme        # function
+#inst_gat               # function
+#inst_jos               # function
+#inst_hstr              # function
 inst_virtualmin        # function
 inst_add_python        # function
-dis_services           # function
-inst_sury_repo         # function
-inst_php74             # function
-inst_php80             # function
-inst_php81             # function
-inst_php82             # function
-inst_php83             # function
-inst_php84             # function
+#dis_services           # function
+#inst_sury_repo         # function
+#inst_php74             # function
+#inst_php80             # function
+#inst_php81             # function
+#inst_php82             # function
+#inst_php83             # function
+#inst_php84             # function
 enable_apache_mod      # function
-inst_redis             # function
-inst_virtualmin_config # function
-inst_pwgen             # function
-inst_mc                # function
+#inst_redis             # function
+#inst_virtualmin_config # function
+#inst_pwgen             # function
+#inst_mc                # function
 inst_kernel            # function
-inst_mariadb           # function
-inst_bip               # function
-post_inst              # function
+#inst_mariadb           # function
+#inst_bip               # function
+#post_inst              # function
 inst_motd              # function
-inst_composer          # function
-inst_f2b               # function
-enh_nft                # function
-inst_logo_styles       # function
-inst_firewalldconf     # function
+#inst_composer          # function
+#inst_f2b               # function
+#enh_nft                # function
+#inst_logo_styles       # function
+#inst_firewalldconf     # function
 closing_msg            # function
 
 reboot
