@@ -854,14 +854,14 @@ function post_inst() {
     cd /root || exit
     touch .bash_aliases
     {
-        echo "alias jos='joshuto'"
+        #echo "alias jos='joshuto'"
         echo "alias gc='gat'"
         echo "alias ed=nano"
         echo "alias hh=hstr"
     } >>.bash_aliases
     cp .bash_aliases /etc/skel/.bash_aliases
     rm -R .spamassassin
-    rm inst_deb12_amd64.sh
+    rm inst_deb12_amd64_reduced.sh
 
     ################################
     ### remove default apache2 files
