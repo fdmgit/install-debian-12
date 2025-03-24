@@ -828,7 +828,7 @@ function enable_apache_mod() {
 
 }
 
-function dis_services() {
+#function dis_services() {
 
     ##############################
     #### Disable Services     ####
@@ -843,7 +843,7 @@ function dis_services() {
     #systemctl disable postgrey
     #systemctl disable postfix
 
-}
+#}
 
 function post_inst() {
 
