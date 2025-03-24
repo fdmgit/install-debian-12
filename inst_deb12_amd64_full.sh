@@ -182,18 +182,18 @@ cd /root || exit
 #### remove bind9, dovecot 
 ###################################
 
-systemctl stop named
-systemctl disable named
+#systemctl stop named
+#systemctl disable named
 
-apt -y purge bind9
-apt -y purge bind9-utils
-apt -y purge dns-root-data
-rm -r /var/cache/bind/
-rm /etc/apparmor.d/local/*
-apt purge procmail procmail-wrapper -y
-apt purge dovecot-core dovecot-imapd dovecot-pop3d -y
-rm -r /var/lib/dovecot/
-rm -r /etc/dovecot/
+#apt -y purge bind9
+#apt -y purge bind9-utils
+#apt -y purge dns-root-data
+#rm -r /var/cache/bind/
+#rm /etc/apparmor.d/local/*
+#apt purge procmail procmail-wrapper -y
+#apt purge dovecot-core dovecot-imapd dovecot-pop3d -y
+#rm -r /var/lib/dovecot/
+#rm -r /etc/dovecot/
 
 printf '\nn\nn\ny\ny\ny\ny\n' | mariadb-secure-installation
 
@@ -835,13 +835,13 @@ function dis_services() {
     ##############################
 
     #systemctl disable named
-    systemctl disable usermin
-    systemctl disable dovecot
-    systemctl disable proftpd
+    #systemctl disable usermin
+    #systemctl disable dovecot
+    #systemctl disable proftpd
     #systemctl disable clamav-freshclam
     #systemctl disable clamav-daemon
     #systemctl disable postgrey
-    systemctl disable postfix
+    #systemctl disable postfix
 
 }
 
