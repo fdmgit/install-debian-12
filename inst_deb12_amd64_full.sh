@@ -828,22 +828,23 @@ function enable_apache_mod() {
 
 }
 
-#function dis_services() {
+function dis_services() {
 
     ##############################
     #### Disable Services     ####
     ##############################
 
     #systemctl disable named
-    #systemctl disable usermin
-    #systemctl disable dovecot
-    #systemctl disable proftpd
+    systemctl disable usermin
+    systemctl disable dovecot
+    systemctl disable proftpd
     #systemctl disable clamav-freshclam
     #systemctl disable clamav-daemon
     #systemctl disable postgrey
-    #systemctl disable postfix
+    systemctl disable postfix
 
-#}
+
+}
 
 function post_inst() {
 
