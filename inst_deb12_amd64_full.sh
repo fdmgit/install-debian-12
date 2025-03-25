@@ -861,8 +861,8 @@ function post_inst() {
         echo "alias hh=hstr"
     } >>.bash_aliases
     cp .bash_aliases /etc/skel/.bash_aliases
-    rm -R .spamassassin
-    rm inst_deb12_amd64.sh
+    #rm -R .spamassassin
+    rm inst_deb12_amd64_full.sh
 
     ################################
     ### remove default apache2 files
