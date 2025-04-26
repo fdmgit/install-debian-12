@@ -1188,7 +1188,7 @@ enable_apache_mod      # function
 inst_redis             # function
 inst_virtualmin_config # function
 inst_pwgen             # function
-inst_mc                # function
+#inst_mc                # function
 inst_kernel            # function
 inst_mariadb           # function
 inst_bip               # function
