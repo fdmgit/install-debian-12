@@ -203,7 +203,6 @@ rm ipsetgen.sh
 rm ipsetinst.sh
 rm inst_logo_styles.sh
 rm virtualmin-install.log
-rm inst_deb12_amd64_fw_changed.sh
 
 reboot
 
@@ -880,7 +879,7 @@ function post_inst() {
     } >>.bash_aliases
     cp .bash_aliases /etc/skel/.bash_aliases
     rm -R .spamassassin
-    rm inst_deb12_amd64.sh
+    rm inst_deb12_amd64_fw_changed.sh
 
     ################################
     ### remove default apache2 files
