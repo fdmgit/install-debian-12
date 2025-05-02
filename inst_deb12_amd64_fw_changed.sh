@@ -322,7 +322,7 @@ function inst_firewalldconf() {
 
 }
 
-function inst_firewalld_ipsetinst() {
+function inst_firewalld_ipset() {
 
     cd /root
     wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/ipsetgen.sh
