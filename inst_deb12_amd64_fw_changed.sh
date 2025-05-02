@@ -329,6 +329,7 @@ function inst_firewalldconf() {
 
 function inst_firewalld_ipset() {
 
+    systemctl stop firewalld
     cd /root
     wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/ipsetgen.sh
     chmod +x ipsetgen.sh
@@ -337,6 +338,10 @@ function inst_firewalld_ipset() {
 
     source ./ipsetgen.sh
     source ./ipsetinst.sh
+
+    systemctl enable customnft.service
+    systemctl stop firewalld
+    systemctl start firewalld
 
 }
 
