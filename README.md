@@ -35,6 +35,12 @@ To install for amd64 (full) use :
 wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/inst_deb12_amd64_full.sh && bash inst_deb12_amd64_full.sh
 ```
 
+To install for amd64 (firewalld) use :
+
+```
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/inst_deb12_amd64_fw_changed.sh && bash inst_deb12_amd64_fw_changed.sh
+```
+
 
 To install for Raspberry use:
 
