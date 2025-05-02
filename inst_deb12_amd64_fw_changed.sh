@@ -330,8 +330,8 @@ function inst_firewalld_ipset() {
     wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/ipsetinst.sh
     chmod +x ipsetinst.sh
 
-    source ./root/ipsetgen.sh
-    source ./root/ipsetinst.sh
+    #source ./root/ipsetgen.sh
+    #source ./root/ipsetinst.sh
 
 }
 
