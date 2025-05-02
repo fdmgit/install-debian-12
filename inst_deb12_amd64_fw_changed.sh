@@ -322,6 +322,19 @@ function inst_firewalldconf() {
 
 }
 
+function inst_firewalld_ipsetinst_firewalld_ipset() {
+
+    cd /root
+    wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/ipsetgen.sh
+    chmod +x ipsetgen.sh
+    wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/ipsetinst.sh
+    chmod +x ipsetinst.sh
+
+    source ./root/ipsetgen.sh
+    source ./root/ipsetinst.sh
+
+}
+
 function inst_pwgen() {
 
     ###################################
@@ -1178,7 +1191,7 @@ enable_apache_mod      # function
 inst_redis             # function
 inst_virtualmin_config # function
 inst_pwgen             # function
-inst_mc                # function
+#inst_mc                # function
 inst_kernel            # function
 inst_mariadb           # function
 inst_bip               # function
@@ -1188,7 +1201,8 @@ inst_composer          # function
 inst_f2b               # function
 enh_nft                # function
 inst_logo_styles       # function
-inst_firewalldconf     # function
+#inst_firewalldconf     # function
+inst_firewalld_ipset   # function
 closing_msg            # function
 
 reboot
