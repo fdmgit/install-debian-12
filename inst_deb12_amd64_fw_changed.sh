@@ -169,7 +169,6 @@ rm logo.png
 rm logo_welcome.png
 rm styles.css
 rm logostyle.zip
-rm inst_logo_styles.sh
 
 cd //home/._default_hostname/public_html/ || exit
 wget -O index.html https://raw.githubusercontent.com/fdmgit/install-debian-12/main/index_web.php
@@ -198,6 +197,12 @@ rm -r /etc/dovecot/
 printf '\nn\nn\ny\ny\ny\ny\n' | mariadb-secure-installation
 
 apt -y autoremove && apt -y autoclean
+
+cd /root
+rm ipsetgen.sh
+rm ipsetinst.sh
+rm inst_logo_styles.sh
+rm inst_deb12_amd64_fw_changed.sh
 
 reboot
 
