@@ -298,32 +298,6 @@ EOF
 
 }
 
-function inst_firewalldconf() {
-
-    ###################################
-    #### add Firewalld configuration
-    ###################################
-
-    cd /etc/firewalld || exit
-    wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/firewalldconf.tar.gz
-    tar -xvzf firewalldconf.tar.gz
-    systemctl stop firewalld
-    cd /etc/firewalld/firewalldconf/ipsets || exit
-    cp ./*.xml /etc/firewalld/ipsets/
-    cd /etc/firewalld/firewalldconf/zones || exit
-    cp drop.xml /etc/firewalld/zones/
-    cd /root || exit
-    systemctl start firewalld
-    echo ""
-    echo "Waiting 60 sec ....."
-    echo ""
-    sleep 60
-
-    systemctl enable customnft.service
-    systemctl stop firewalld
-    systemctl start firewalld
-
-}
 
 function inst_firewalld_ipset() {
 
@@ -353,21 +327,6 @@ function inst_pwgen() {
 
 }
 
-function inst_mc() {
-
-    #################################
-    #### Install Midnight Commander
-    #################################
-
-    cd /usr/share/keyrings || exit
-    wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/tataranovich-keyring.gpg
-    echo "# Repository for Midnight Commander" >/etc/apt/sources.list.d/mc.list
-    echo "deb [signed-by=/usr/share/keyrings/tataranovich-keyring.gpg] http://www.tataranovich.com/debian bookworm main" >>/etc/apt/sources.list.d/mc.list
-
-    apt update
-    apt install mc -y
-
-}
 
 function inst_smart_nvme() {
 
@@ -1204,7 +1163,6 @@ enable_apache_mod      # function
 inst_redis             # function
 inst_virtualmin_config # function
 inst_pwgen             # function
-#inst_mc                # function
 inst_kernel            # function
 inst_mariadb           # function
 inst_bip               # function
@@ -1214,7 +1172,6 @@ inst_composer          # function
 inst_f2b               # function
 enh_nft                # function
 inst_logo_styles       # function
-#inst_firewalldconf     # function
 inst_firewalld_ipset   # function
 closing_msg            # function
 
