@@ -202,6 +202,7 @@ cd /root
 rm ipsetgen.sh
 rm ipsetinst.sh
 rm inst_logo_styles.sh
+rm virtualmin-install.log
 rm inst_deb12_amd64_fw_changed.sh
 
 reboot
