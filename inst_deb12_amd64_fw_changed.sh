@@ -199,8 +199,6 @@ printf '\nn\nn\ny\ny\ny\ny\n' | mariadb-secure-installation
 apt -y autoremove && apt -y autoclean
 
 cd /root
-rm ipsetgen.sh
-rm ipsetinst.sh
 rm inst_logo_styles.sh
 rm virtualmin-install.log
 
