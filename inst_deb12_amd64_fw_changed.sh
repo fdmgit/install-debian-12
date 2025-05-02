@@ -762,8 +762,8 @@ EOF
 function inst_php84() {
 
 
-    apt-get install php8.3-{bcmath,bz2,cgi,curl,dba,fpm,gd,gmp,igbinary,imagick,imap,intl,ldap,mbstring} -y
-    apt-get install php8.3-{mysql,odbc,opcache,pspell,readline,redis,soap,sqlite3,tidy,xml,xmlrpc,xsl,zip} -y
+    apt-get install php8.4-{bcmath,bz2,cgi,curl,dba,fpm,gd,gmp,igbinary,imagick,imap,intl,ldap,mbstring} -y
+    apt-get install php8.4-{mysql,odbc,opcache,pspell,readline,redis,soap,sqlite3,tidy,xml,xmlrpc,xsl,zip} -y
 
     cat >>/etc/php/8.4/cgi/php.ini <<'EOF'
 
