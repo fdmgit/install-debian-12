@@ -330,8 +330,8 @@ function inst_firewalld_ipset() {
     wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/ipsetinst.sh
     chmod +x ipsetinst.sh
 
-    #source ./root/ipsetgen.sh
-    #source ./root/ipsetinst.sh
+    source ./ipsetgen.sh
+    source ./ipsetinst.sh
 
 }
 
@@ -902,12 +902,12 @@ function inst_virtualmin() {
 
 
     ##### testing
-    #wget -O virtualmin-install.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
-    #yes | sh virtualmin-install.sh --type mini  #  < full | mini >
+    wget -O virtualmin-install.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
+    yes | sh virtualmin-install.sh --type mini  #  < full | mini >
     
     ##### production
-    wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
-    yes | sh virtualmin-install.sh --minimal  #  < full | mini >
+    #wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
+    #yes | sh virtualmin-install.sh --minimal  #  < full | mini >
     #sh virtualmin-install.sh  -y
     apt install fail2ban -y
     virtualmin-config-system -i=Fail2banFirewalld
