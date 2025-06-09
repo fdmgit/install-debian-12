@@ -889,7 +889,7 @@ function inst_gat() {
     ###################################
 
     cd /usr/local/bin || exit
-    wget https://github.com/koki-develop/gat/releases/download/v0.19.3/gat_Linux_x86_64.tar.gz
+    wget https://github.com/koki-develop/gat/releases/download/v0.24.1/gat_Linux_x86_64.tar.gz
     tar -xvzf gat_Linux_x86_64.tar.gz
     chown root:root gat
     chmod +x gat
