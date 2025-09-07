@@ -14,6 +14,12 @@ To install for amd64 use :
 wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/inst_deb12_amd64.sh && bash inst_deb12_amd64.sh
 ```
 
+To install for amd64 (Debian 13) use :
+
+```
+wget https://raw.githubusercontent.com/fdmgit/install-debian-12/main/inst_deb13_amd64.sh && bash inst_deb13_amd64.sh
+```
+
 To install for amd64 (kernel version 6.12.32) use (TEST only) :
 
 ```
