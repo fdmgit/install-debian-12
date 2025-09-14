@@ -396,7 +396,7 @@ function inst_sury_repo() {
     echo | curl -sSL https://packages.sury.org/php/README.txt | sudo bash -xe
     
     apt update
-    apt upgrade -y
+    echo "N" | apt upgrade -y
 
 }
 
