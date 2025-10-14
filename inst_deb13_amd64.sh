@@ -870,7 +870,7 @@ function inst_virtualmin() {
 
     ##### testing
     wget -O virtualmin-install.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
-    yes | sh virtualmin-install.sh --type mini  --branch unstable #  < full | mini >
+    yes | sh virtualmin-install.sh --type mini  --branch prerelease #  < full | mini >
     
     ##### production
     #wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
