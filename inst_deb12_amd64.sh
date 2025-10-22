@@ -869,12 +869,12 @@ function inst_virtualmin() {
 
 
     ##### testing
-    wget -O virtualmin-install.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
+    #wget -O virtualmin-install.sh https://raw.githubusercontent.com/virtualmin/virtualmin-install/master/virtualmin-install.sh
     #yes | sh virtualmin-install.sh --type mini  #  < full | mini >
     
     ##### production
-    #wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
-    yes | sh virtualmin-install.sh --minimal --branch rc #  < full | mini >
+    wget -O virtualmin-install.sh https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
+    yes | sh virtualmin-install.sh --minimal #  < full | mini >
     #sh virtualmin-install.sh  -y
     apt install fail2ban -y
     virtualmin-config-system -i=Fail2banFirewalld
